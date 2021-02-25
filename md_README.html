@@ -216,13 +216,13 @@ General Features</h4>
 <li>Implies <code>Zbb</code> &amp; <code>Zbs</code> sub-extensions (the remaining <code>B</code> sub-extensions are not supported yet)</li>
 <li>Compatible to <a href="https://raw.githubusercontent.com/stnolting/neorv32/master/docs/bitmanip-draft.pdf">v0.94-draft</a> of the bit manipulation spec</li>
 <li>Support via intrisc library (see <a href="https://github.com/stnolting/neorv32/tree/master/sw/example/bit_manipulation"><code>sw/example/bit_manipulation</code></a>)</li>
-<li><code>Zbb</code> Base instruction set: <code>CLZ</code> <code>CTZ</code> <code>CPOP</code> <code>SEXT.B</code> <code>SEXT.H</code> <code>MIN[U]</code> <code>MAX[U]</code> <code>ANDN</code> <code>ORN</code> <code>XNOR</code> <code>ROL</code> <code>ROR</code> <code>RORI</code> <code>zext</code>(<em>pseudo-instruction</em> for <code>PACK rd, rs, zero</code>) <code>rev8</code>(<em>pseudo-instruction</em> for <code>GREVI rd, rs, -8</code>) <code>orc.b</code>(<em>pseudo-instruction</em> for <code>GORCI rd, rs, 7</code>)</li>
+<li><code>Zbb</code> Base instruction set: <code>CLZ</code> <code>CTZ</code> <code>CPOP</code> <code>SEXT.B</code> <code>SEXT.H</code> <code>MIN[U]</code> <code>MAX[U]</code> <code>ANDN</code> <code>ORN</code> <code>XNOR</code> <code>ROL</code> <code>ROR[I]</code> <code>zext</code>(<em>pseudo-instruction</em> for <code>PACK rd, rs, zero</code>) <code>rev8</code>(<em>pseudo-instruction</em> for <code>GREVI rd, rs, -8</code>) <code>orc.b</code>(<em>pseudo-instruction</em> for <code>GORCI rd, rs, 7</code>)</li>
 <li><code>Zbs</code> Single-bit instructions: <code>SBSET[I]</code> <code>SBCLR[I]</code> <code>SBINV[I]</code> <code>SBEXT[I]</code></li>
 </ul>
 <h4><a class="anchor" id="autotoc_md11"></a>
 &lt;tt&gt;C&lt;/tt&gt; - Compressed instructions extension</h4>
 <ul>
-<li>ALU instructions: <code>C.ADDI4SPN</code> <code>C.ADDI</code> <code>C.ADD</code> <code>C.ADDI16SP</code> <code>C.LI</code> <code>C.LUI</code> <code>C.SLLI</code> <code>C.SRLI</code> <code>C.SRAI</code> <code>C.ANDI</code> <code>C.SUB</code> <code>C.XOR</code> <code>C.OR</code> <code>C.AND</code> <code>C.MV</code> <code>C.NOP</code></li>
+<li>ALU instructions: <code>C.ADDI4SPN</code> <code>C.ADD[I]</code> <code>C.ADDI16SP</code> <code>C.LI</code> <code>C.LUI</code> <code>C.SLLI</code> <code>C.SRLI</code> <code>C.SRAI</code> <code>C.ANDI</code> <code>C.SUB</code> <code>C.XOR</code> <code>C.OR</code> <code>C.AND</code> <code>C.MV</code> <code>C.NOP</code></li>
 <li>Jump and branch instructions: <code>C.J</code> <code>C.JAL</code> <code>C.JR</code> <code>C.JALR</code> <code>C.BEQZ</code> <code>C.BNEZ</code></li>
 <li>Memory instructions: <code>C.LW</code> <code>C.SW</code> <code>C.LWSP</code> <code>C.SWSP</code></li>
 <li>System instructions: <code>C.EBREAK</code> (only with <code>Zicsr</code> extension)</li>
@@ -236,7 +236,7 @@ General Features</h4>
 <h4><a class="anchor" id="autotoc_md13"></a>
 &lt;tt&gt;I&lt;/tt&gt; - Base integer instruction set</h4>
 <ul>
-<li>ALU instructions: <code>LUI</code> <code>AUIPC</code> <code>ADDI</code> <code>SLTI</code> <code>SLTIU</code> <code>XORI</code> <code>ORI</code> <code>ANDI</code> <code>SLLI</code> <code>SRLI</code> <code>SRAI</code> <code>ADD</code> <code>SUB</code> <code>SLL</code> <code>SLT</code> <code>SLTU</code> <code>XOR</code> <code>SRL</code> <code>SRA</code> <code>OR</code> <code>AND</code></li>
+<li>ALU instructions: <code>LUI</code> <code>AUIPC</code> <code>ADD[I]</code> <code>SLT[I][U]</code> <code>XOR[I]</code> <code>OR[I]</code> <code>AND[I]</code> <code>SLL[I]</code> <code>SRL[I]</code> <code>SRA[I]</code> <code>SUB</code></li>
 <li>Jump and branch instructions: <code>JAL</code> <code>JALR</code> <code>BEQ</code> <code>BNE</code> <code>BLT</code> <code>BGE</code> <code>BLTU</code> <code>BGEU</code></li>
 <li>Memory instructions: <code>LB</code> <code>LH</code> <code>LW</code> <code>LBU</code> <code>LHU</code> <code>SB</code> <code>SH</code> <code>SW</code></li>
 <li>System instructions: <code>ECALL</code> <code>EBREAK</code> <code>FENCE</code></li>
@@ -268,7 +268,7 @@ General Features</h4>
 &lt;tt&gt;Zicsr&lt;/tt&gt; - Privileged architecture - CSR access extension</h4>
 <ul>
 <li>Privilege levels: <code>M-mode</code> (Machine mode)</li>
-<li>CSR access instructions: <code>CSRRW</code> <code>CSRRS</code> <code>CSRRC</code> <code>CSRRWI</code> <code>CSRRSI</code> <code>CSRRCI</code></li>
+<li>CSR access instructions: <code>CSRRW[I]</code> <code>CSRRS[I]</code> <code>CSRRC[I]</code></li>
 <li>System instructions: <code>MRET</code> <code>WFI</code></li>
 <li>Pseudo-instructions are not listed</li>
 <li>Counter CSRs: <code>[m]cycle[h]</code> <code>[m]instret[m]</code> <code>time[h]</code> <code>[m]hpmcounter*[h]</code>(3..31, configurable) <code>mcounteren</code> <code>mcountinhibit</code> <code>mhpmevent*</code>(3..31, configurable)</li>
