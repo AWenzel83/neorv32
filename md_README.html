@@ -69,7 +69,7 @@ $(function() {
 <div class="textblock"><p><a href="https://github.com/stnolting/neorv32"><img src="https://raw.githubusercontent.com/stnolting/neorv32/master/docs/figures/neorv32_logo_dark.png" alt="NEORV32" class="inline"/></a></p>
 <h1><a class="anchor" id="autotoc_md0"></a>
 The NEORV32 RISC-V Processor</h1>
-<p><a href="https://github.com/stnolting/neorv32/actions?query=workflow%3A%22Processor+Check%22"><img src="https://github.com/stnolting/neorv32/workflows/Processor%20Check/badge.svg" alt="Processor Check" style="pointer-events: none;" class="inline"/></a> <a href="https://github.com/stnolting/neorv32/actions?query=workflow%3A%22RISC-V+Compliance%22"><img src="https://github.com/stnolting/neorv32/workflows/RISC-V%20Compliance/badge.svg" alt="RISC-V Compliance" style="pointer-events: none;" class="inline"/></a> <a href="https://github.com/stnolting/neorv32/blob/master/LICENSE"><img src="https://img.shields.io/github/license/stnolting/neorv32" alt="license" class="inline"/></a> <a href="https://github.com/stnolting/neorv32/releases"><img src="https://img.shields.io/github/v/release/stnolting/neorv32" alt="release" class="inline"/></a></p>
+<p><a href="https://github.com/stnolting/neorv32/actions?query=workflow%3A%22Processor+Check%22"><img src="https://github.com/stnolting/neorv32/workflows/Processor%20Check/badge.svg" alt="Processor Check" style="pointer-events: none;" class="inline"/></a> <a href="https://github.com/stnolting/neorv32/actions/workflows/riscv-arch-test.yml"><img src="https://github.com/stnolting/neorv32/actions/workflows/riscv-arch-test.yml/badge.svg" alt="riscv-arch-test" style="pointer-events: none;" class="inline"/></a> <a href="https://github.com/stnolting/neorv32/blob/master/LICENSE"><img src="https://img.shields.io/github/license/stnolting/neorv32" alt="license" class="inline"/></a> <a href="https://github.com/stnolting/neorv32/releases"><img src="https://img.shields.io/github/v/release/stnolting/neorv32" alt="release" class="inline"/></a></p>
 <ul>
 <li><a href="#Overview">Overview</a></li>
 <li><a href="#Status">Status</a></li>
@@ -83,7 +83,7 @@ The NEORV32 RISC-V Processor</h1>
 </ul>
 <h2><a class="anchor" id="autotoc_md1"></a>
 Overview</h2>
-<p>The NEORV32 Processor is a customizable microcontroller-like system on chip (SoC) that is based on the RISC-V-compliant NEORV32 CPU. The processor is intended as <em>ready-to-go</em> auxiliary processor within a larger SoC designs or as stand-alone custom microcontroller.</p>
+<p>The NEORV32 Processor is a customizable microcontroller-like system on chip (SoC) that is based on the RISC-V NEORV32 CPU. The processor is intended as <em>ready-to-go</em> auxiliary processor within a larger SoC designs or as stand-alone custom microcontroller.</p>
 <p>:books: For detailed information take a look at the <a href="https://raw.githubusercontent.com/stnolting/neorv32/master/docs/NEORV32.pdf">NEORV32 data sheet (pdf)</a>. The doxygen-based documentation of the <em>software framework</em> is available online at <a href="https://stnolting.github.io/neorv32/files.html">GitHub-pages</a>.</p>
 <p>:label: The project’s change log is available as <a href="https://github.com/stnolting/neorv32/blob/master/CHANGELOG.md">CHANGELOG.md</a> in the root directory of this repository. To see the changes between <em>stable</em> releases visit the project's <a href="https://github.com/stnolting/neorv32/releases">release page</a>.</p>
 <p>:spiral_notepad: Check out the <a href="https://github.com/stnolting/neorv32/projects">project boards</a> for a list of current <b>ideas</b>, <b>TODOs</b>, features being <b>planned</b> and <b>work-in-progress</b>.</p>
@@ -91,13 +91,13 @@ Overview</h2>
 <h3><a class="anchor" id="autotoc_md2"></a>
 Key Features</h3>
 <ul>
-<li>RISC-V 32-bit <code>rv32</code> <a href="#NEORV32-CPU-Features"><b>NEORV32 CPU</b></a>, compliant to<ul>
+<li>RISC-V 32-bit <code>rv32</code> <a href="#NEORV32-CPU-Features"><b>NEORV32 CPU</b></a>, compatible to<ul>
 <li>subset of the <em>Unprivileged ISA Specification</em> <a href="https://github.com/stnolting/neorv32/blob/master/docs/riscv-spec.pdf">(Version 2.2)</a></li>
 <li>subset of the <em>Privileged Architecture Specification</em> <a href="https://github.com/stnolting/neorv32/blob/master/docs/riscv-privileged.pdf">(Version 1.12-draft)</a></li>
-<li>the <a href="#Status">official RISC-V compliance tests</a> (<em>passing</em>)</li>
+<li>the <a href="#Status">official RISC-V architecture tests</a> (<em>passing</em>)</li>
 </ul>
 </li>
-<li>Configurable RISC-V-compliant CPU extensions<ul>
+<li>Configurable RISC-V-compatible CPU extensions<ul>
 <li><a href="#A---Atomic-memory-access-extension"><code>A</code></a> - atomic memory access instructions (optional)</li>
 <li><a href="#B---Bit-manipulation-instructions-extension"><code>B</code></a> - Bit manipulation instructions (optional) :construction:</li>
 <li><a href="#C---Compressed-instructions-extension"><code>C</code></a> - compressed instructions (16-bit) (optional)</li>
@@ -114,7 +114,7 @@ Key Features</h3>
 </li>
 <li>Full-scale RISC-V microcontroller system / <b>SoC</b> <a href="#NEORV32-Processor-Features"><b>NEORV32 Processor</b></a> with optional submodules<ul>
 <li>optional embedded memories (instructions/data/bootloader, RAM/ROM) and caches</li>
-<li>timers (watch dog, RISC-V-compliant machine timer)</li>
+<li>timers (watch dog, RISC-V-compatible machine timer)</li>
 <li>serial interfaces (SPI, TWI, UARTs)</li>
 <li>general purpose IO and PWM channels</li>
 <li>external bus interface (Wishbone / <a href="#AXI4-Connectivity">AXI4</a>)</li>
@@ -152,7 +152,7 @@ Design Principles</h3>
 <h3><a class="anchor" id="autotoc_md4"></a>
 Status</h3>
 <p>The processor is <a href="#FPGA-Implementation-Results">synthesizable</a> (tested on <em>real hardware</em> using Intel Quartus Prime, Xilinx Vivado and Lattice Radiant/Synplify Pro) and can successfully execute all the <a href="https://github.com/stnolting/neorv32/tree/master/sw/example">provided example programs</a> including the <a href="#CoreMark-Benchmark">CoreMark benchmark</a>.</p>
-<p><b>RISC-V Compliance</b>: The processor passes the official <code>rv32_m/C</code>, <code>rv32_m/I</code>, <code>rv32_m/M</code>, <code>rv32_m/privilege</code> and <code>rv32_m/Zifencei</code> <a href="https://github.com/riscv/riscv-compliance">RISC-V compliance</a> tests. More information regarding the NEORV32 port of the compliance framework can be found in <a href="https://github.com/stnolting/neorv32/blob/master/riscv-compliance/README.md"><code>riscv-compliance/README.md</code></a>.</p>
+<p><b>RISC-V Architecture Tests</b>: The processor passes the official <code>rv32_m/C</code>, <code>rv32_m/I</code>, <code>rv32_m/M</code>, <code>rv32_m/privilege</code> and <code>rv32_m/Zifencei</code> <a href="https://github.com/riscv/riscv-arch-test">riscv-arch-test</a> tests. More information regarding the NEORV32 port of the riscv-arch-test test framework can be found in <a href="https://github.com/stnolting/neorv32/blob/master/riscv-arch-test/README.md"><code>riscv-arch-test/README.md</code></a>.</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadLeft">Project component   </th><th class="markdownTableHeadLeft">CI status    </th></tr>
@@ -163,7 +163,7 @@ Status</h3>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyLeft"><a href="https://github.com/stnolting/riscv-gcc-prebuilt">Pre-built toolchains</a>   </td><td class="markdownTableBodyLeft"><a href="https://github.com/stnolting/riscv-gcc-prebuilt/actions?query=workflow%3A%22Test+Toolchains%22"><img src="https://github.com/stnolting/riscv-gcc-prebuilt/workflows/Test%20Toolchains/badge.svg" alt="Test Toolchains" style="pointer-events: none;" class="inline"/></a>    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft"><a href="https://github.com/stnolting/neorv32/blob/master/riscv-compliance/README.md">RISC-V compliance test</a>   </td><td class="markdownTableBodyLeft"><a href="https://github.com/stnolting/neorv32/actions?query=workflow%3A%22RISC-V+Compliance%22"><img src="https://github.com/stnolting/neorv32/workflows/RISC-V%20Compliance/badge.svg" alt="RISC-V Compliance" style="pointer-events: none;" class="inline"/></a>   </td></tr>
+<td class="markdownTableBodyLeft"><a href="https://github.com/stnolting/neorv32/blob/master/riscv-arch-test/README.md">RISC-V architecture test</a>   </td><td class="markdownTableBodyLeft"><a href="https://github.com/stnolting/neorv32/actions/workflows/riscv-arch-test.yml"><img src="https://github.com/stnolting/neorv32/actions/workflows/riscv-arch-test.yml/badge.svg" alt="riscv-arch-test" style="pointer-events: none;" class="inline"/></a>   </td></tr>
 </table>
 <h2><a class="anchor" id="autotoc_md5"></a>
 Features</h2>
@@ -175,13 +175,13 @@ NEORV32 Processor Features</h3>
 <ul>
 <li>processor-internal data and instruction memories (<b>DMEM</b> / <b>IMEM</b>) &amp; cache (<b>iCACHE</b>)</li>
 <li>bootloader (<b>BOOTLDROM</b>) with UART console and automatic application boot from SPI flash option</li>
-<li>machine system timer (<b>MTIME</b>), RISC-V-compliant</li>
+<li>machine system timer (<b>MTIME</b>), RISC-V-compatible</li>
 <li>watchdog timer (<b>WDT</b>)</li>
 <li>two independent universal asynchronous receivers and transmitters (<b>UART0</b> &amp; <b>UART1</b>) with optional hardware flow control (RTS/CTS)</li>
 <li>8/16/24/32-bit serial peripheral interface controller (<b>SPI</b>) with 8 dedicated chip select lines</li>
 <li>two wire serial interface controller (<b>TWI</b>), with optional clock-stretching, compatible to the I²C standard</li>
 <li>general purpose parallel IO port (<b>GPIO</b>), 32xOut &amp; 32xIn, with pin-change interrupt</li>
-<li>32-bit external bus interface, Wishbone b4 compliant (<b>WISHBONE</b>)</li>
+<li>32-bit external bus interface, Wishbone b4 compatible (<b>WISHBONE</b>)</li>
 <li>wrapper for <b>AXI4-Lite Master Interface</b> (see <a href="#AXI4-Connectivity">AXI Connectivity</a>)</li>
 <li>PWM controller with 4 channels and 8-bit duty cycle resolution (<b>PWM</b>)</li>
 <li>ring-oscillator-based true random number generator (<b>TRNG</b>)</li>
@@ -191,7 +191,9 @@ NEORV32 Processor Features</h3>
 </ul>
 <h3><a class="anchor" id="autotoc_md7"></a>
 NEORV32 CPU Features</h3>
-<p>The NEORV32 CPU is <b>compliant</b> to the <a href="https://raw.githubusercontent.com/stnolting/neorv32/master/docs/riscv-spec.pdf">official RISC-V specifications (2.2)</a> including a subset of the <a href="https://raw.githubusercontent.com/stnolting/neorv32/master/docs/riscv-spec.pdf">RISC-V privileged architecture specifications (1.12-draft)</a> tested via the <a href="https://github.com/riscv/riscv-compliance">official RISC-V Compliance Test Framework</a> (see <a href="https://github.com/stnolting/neorv32/blob/master/riscv-compliance/README.md"><code>riscv-compliance/README</code></a>).</p>
+<p>The NEORV32 CPU implements the <a href="https://raw.githubusercontent.com/stnolting/neorv32/master/docs/riscv-spec.pdf">official RISC-V specifications (2.2)</a> including a subset of the <a href="https://raw.githubusercontent.com/stnolting/neorv32/master/docs/riscv-spec.pdf">RISC-V privileged architecture specifications (1.12-draft)</a></p><ul>
+<li>tested via the <a href="https://github.com/riscv/riscv-arch-test">official riscv-arch-test Test Framework</a> (see <a href="https://github.com/stnolting/neorv32/blob/master/riscv-arch-test/README.md"><code>riscv-arch-test/README</code></a>).</li>
+</ul>
 <p>More information regarding the CPU including a detailed list of the instruction set and the available CSRs can be found in the <a href="https://raw.githubusercontent.com/stnolting/neorv32/master/docs/NEORV32.pdf">:page_facing_up: NEORV32 data sheet</a>.</p>
 <h4><a class="anchor" id="autotoc_md8"></a>
 General Features</h4>
@@ -212,13 +214,12 @@ General Features</h4>
 <h4><a class="anchor" id="autotoc_md10"></a>
 &lt;tt&gt;B&lt;/tt&gt; - Bit manipulation instructions extension</h4>
 <ul>
-<li>:construction: <b>work-in-progress</b> :construction:</li>
+<li>:construction: <b>WORK-IN-PROGRESS</b> :construction:</li>
 <li>:warning: The bit-manipulation extension has not been officially ratified yet!</li>
-<li>:warning: Implies <code>Zbb</code> &amp; <code>Zbs</code> sub-extensions (the remaining <code>B</code> sub-extensions are not supported yet)</li>
 <li>Compatible to <a href="https://raw.githubusercontent.com/stnolting/neorv32/master/docs/bitmanip-draft.pdf">v0.94-draft</a> of the bit manipulation spec</li>
 <li>Support via intrisc library (see <a href="https://github.com/stnolting/neorv32/tree/master/sw/example/bit_manipulation"><code>sw/example/bit_manipulation</code></a>)</li>
-<li><code>Zbb</code> Base instruction set: <code>CLZ</code> <code>CTZ</code> <code>CPOP</code> <code>SEXT.B</code> <code>SEXT.H</code> <code>MIN[U]</code> <code>MAX[U]</code> <code>ANDN</code> <code>ORN</code> <code>XNOR</code> <code>ROL</code> <code>ROR[I]</code> <code>zext</code>(<em>pseudo-instruction</em> for <code>PACK rd, rs, zero</code>) <code>rev8</code>(<em>pseudo-instruction</em> for <code>GREVI rd, rs, -8</code>) <code>orc.b</code>(<em>pseudo-instruction</em> for <code>GORCI rd, rs, 7</code>)</li>
-<li><code>Zbs</code> Single-bit instructions: <code>SBSET[I]</code> <code>SBCLR[I]</code> <code>SBINV[I]</code> <code>SBEXT[I]</code></li>
+<li><code>Zbb</code> base instruction set: <code>CLZ</code> <code>CTZ</code> <code>CPOP</code> <code>SEXT.B</code> <code>SEXT.H</code> <code>MIN[U]</code> <code>MAX[U]</code> <code>ANDN</code> <code>ORN</code> <code>XNOR</code> <code>ROL</code> <code>ROR[I]</code> <code>zext</code>(<em>pseudo-instruction</em> for <code>PACK rd, rs, zero</code>) <code>rev8</code>(<em>pseudo-instruction</em> for <code>GREVI rd, rs, -8</code>) <code>orc.b</code>(<em>pseudo-instruction</em> for <code>GORCI rd, rs, 7</code>)</li>
+<li><code>Zbs</code> single-bit instructions: <code>SBSET[I]</code> <code>SBCLR[I]</code> <code>SBINV[I]</code> <code>SBEXT[I]</code></li>
 </ul>
 <h4><a class="anchor" id="autotoc_md11"></a>
 &lt;tt&gt;C&lt;/tt&gt; - Compressed instructions extension</h4>
@@ -238,7 +239,7 @@ General Features</h4>
 <h4><a class="anchor" id="autotoc_md13"></a>
 &lt;tt&gt;F&lt;/tt&gt; - Single-precision floating-point extension</h4>
 <ul>
-<li>:construction: <b>work-in-progress</b> :construction:</li>
+<li>:construction: <b>WORK-IN-PROGRESS</b> :construction:</li>
 <li>:warning: the <code>F</code> extension is not operational yet!</li>
 <li>:information_source: check out the <a href="https://github.com/stnolting/neorv32/projects/4">F-extension project board</a> for the current implementation state</li>
 </ul>
@@ -282,7 +283,7 @@ General Features</h4>
 <li>Pseudo-instructions are not listed</li>
 <li>Counter CSRs: <code>[m]cycle[h]</code> <code>[m]instret[m]</code> <code>time[h]</code> <code>[m]hpmcounter*[h]</code>(3..31, configurable) <code>mcounteren</code> <code>mcountinhibit</code> <code>mhpmevent*</code>(3..31, configurable)</li>
 <li>Machine CSRs: <code>mstatus[h]</code> <code>misa</code>(read-only!) <code>mie</code> <code>mtvec</code> <code>mscratch</code> <code>mepc</code> <code>mcause</code> <code>mtval</code> <code>mip</code> <code>mvendorid</code> <a href="https://github.com/riscv/riscv-isa-manual/blob/master/marchid.md"><code>marchid</code></a> <code>mimpid</code> <code>mhartid</code> <code>mzext</code>(custom)</li>
-<li>Supported (sync.) exceptions (all RISC-V-compliant):<ul>
+<li>Supported (sync.) exceptions (implementing the RISC-V specs):<ul>
 <li>Misaligned instruction address</li>
 <li>Instruction access fault (via timeout/error after unacknowledged bus access)</li>
 <li>Illegal instruction</li>
@@ -296,9 +297,9 @@ General Features</h4>
 </ul>
 </li>
 <li>Supported (async.) exceptions / interrupts:<ul>
-<li>Machine timer interrupt <code>mti</code> (via processor's MTIME unit / external signal), RISC-V-compliant</li>
-<li>Machine software interrupt <code>msi</code> (via external signal), RISC-V-compliant</li>
-<li>Machine external interrupt <code>mei</code> (via external signal), RISC-V-compliant</li>
+<li>Machine timer interrupt <code>mti</code> (via processor's MTIME unit / external signal)</li>
+<li>Machine software interrupt <code>msi</code> (via external signal)</li>
+<li>Machine external interrupt <code>mei</code> (via external signal)</li>
 <li>16 fast interrupt requests (custom extension), 6+1 available for custom usage</li>
 </ul>
 </li>
@@ -323,14 +324,14 @@ General Features</h4>
 <li>Additional machine CSRs: <code>mhpmevent*</code>(3..31) <code>[m]hpmcounter*[h]</code>(3..31)</li>
 </ul>
 <h3><a class="anchor" id="autotoc_md22"></a>
-:warning: Non-RISC-V-Compliant Issues and Limitations</h3>
+:warning: Non-RISC-V-Compatible Issues and Limitations</h3>
 <ul>
 <li>CPU and Processor are BIG-ENDIAN, but this should be no problem as the external memory bus interface provides big- and little-endian configurations</li>
 <li><code>misa</code> CSR is read-only - no dynamic enabling/disabling of synthesized CPU extensions during runtime; for compatibility: write accesses (in m-mode) are ignored and do not cause an exception</li>
 <li>The physical memory protection (<b>PMP</b>) only supports <code>NAPOT</code> mode yet and a minimal granularity of 8 bytes</li>
 <li>The <code>A</code> extension only implements <code>lr.w</code> and <code>sc.w</code> instructions yet. However, these instructions are sufficient to emulate all further AMO operations</li>
 <li>The <code>mcause</code> trap code <code>0x80000000</code> (originally reserved in the RISC-V specs) is used to indicate a hardware reset (as "non-maskable interrupt")</li>
-<li>The bit manipulation extension is not yet officially ratified, but is expected to stay unchanged. There is no software support in the upstream GCC RISC-V port yet. However, an intrinsic library is provided to utilize the provided bit manipulation extension from C-language code (see <a href="https://github.com/stnolting/neorv32/tree/master/sw/example/bit_manipulation"><code>sw/example/bit_manipulation</code></a>). NEORV32's <code>B</code> extension is compliant to spec. version "0.94-draft".</li>
+<li>The bit manipulation extension is not yet officially ratified, but is expected to stay unchanged. There is no software support in the upstream GCC RISC-V port yet. However, an intrinsic library is provided to utilize the provided bit manipulation extension from C-language code (see <a href="https://github.com/stnolting/neorv32/tree/master/sw/example/bit_manipulation"><code>sw/example/bit_manipulation</code></a>). NEORV32's <code>B</code> extension is compatible to spec. version "0.94-draft".</li>
 </ul>
 <h2><a class="anchor" id="autotoc_md23"></a>
 FPGA Implementation Results</h2>
