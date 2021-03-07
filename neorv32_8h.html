@@ -85,6 +85,7 @@ $(function() {
 <code>#include &quot;<a class="el" href="neorv32__gpio_8h_source.html">neorv32_gpio.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="neorv32__mtime_8h_source.html">neorv32_mtime.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="neorv32__nco_8h_source.html">neorv32_nco.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="neorv32__neoled_8h_source.html">neorv32_neoled.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="neorv32__pwm_8h_source.html">neorv32_pwm.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="neorv32__spi_8h_source.html">neorv32_spi.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="neorv32__trng_8h_source.html">neorv32_trng.h</a>&quot;</code><br />
@@ -739,6 +740,7 @@ Enumerations</h2></td></tr>
 , <br />
 &#160;&#160;<a class="el" href="neorv32_8h.html#a7c2df941d0405641ae6c4c9c8b4cb18da58ee655471a1381032d8c069a2edf958">SYSINFO_FEATURES_IO_NCO</a> = 25
 , <a class="el" href="neorv32_8h.html#a7c2df941d0405641ae6c4c9c8b4cb18dab2c90adb1f7d8012ed6a69a91720e87f">SYSINFO_FEATURES_IO_UART1</a> = 26
+, <a class="el" href="neorv32_8h.html#a7c2df941d0405641ae6c4c9c8b4cb18da1cc62fc88de103088d1fc9f069be3e46">SYSINFO_FEATURES_IO_NEOLED</a> = 27
 <br />
  }</td></tr>
 <tr class="separator:a7c2df941d0405641ae6c4c9c8b4cb18d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -992,6 +994,49 @@ Enumerations</h2></td></tr>
 <br />
  }</td></tr>
 <tr class="separator:a06ae4857b5d2616b57a005a8f089cb5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">IO Device: Smart LED Hardware Interface (NEOLED)</h2></td></tr>
+<tr class="memitem:afee5309dc16ee41ec41961778c8a79a6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="neorv32_8h.html#afee5309dc16ee41ec41961778c8a79a6">NEOLED_CT</a>&#160;&#160;&#160;(*(<a class="el" href="neorv32_8h.html#a3b61ddcb0ba2be60072440c54570e1f3">IO_REG32</a> 0xFFFFFFD8UL))</td></tr>
+<tr class="separator:afee5309dc16ee41ec41961778c8a79a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e5cdc106f7a4620c2bcf0bc08f26119"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="neorv32_8h.html#a3e5cdc106f7a4620c2bcf0bc08f26119">NEOLED_DATA</a>&#160;&#160;&#160;(*(<a class="el" href="neorv32_8h.html#a3b61ddcb0ba2be60072440c54570e1f3">IO_REG32</a> 0xFFFFFFDCUL))</td></tr>
+<tr class="separator:a3e5cdc106f7a4620c2bcf0bc08f26119"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a34ecaf2596fca35719d1e3e3254b51"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="neorv32_8h.html#a0a34ecaf2596fca35719d1e3e3254b51">NEORV32_NEOLED_CT_enum</a> { <br />
+&#160;&#160;<a class="el" href="neorv32_8h.html#a0a34ecaf2596fca35719d1e3e3254b51a8290d4ca0e1226f5ea04d2038418eb51">NEOLED_CT_EN</a> = 0
+, <a class="el" href="neorv32_8h.html#a0a34ecaf2596fca35719d1e3e3254b51a408cf3e3d89c24982538d1b62cd460dc">NEOLED_CT_MODE</a> = 1
+, <a class="el" href="neorv32_8h.html#a0a34ecaf2596fca35719d1e3e3254b51a153c5ff7ff7267e47a03f8acec96e03d">NEOLED_CT_BSCON</a> = 2
+, <a class="el" href="neorv32_8h.html#a0a34ecaf2596fca35719d1e3e3254b51ab94b592c94262410c69101a7129b9f3f">NEOLED_CT_PRSC0</a> = 3
+, <br />
+&#160;&#160;<a class="el" href="neorv32_8h.html#a0a34ecaf2596fca35719d1e3e3254b51a505396e2fcd9f21b2ae5476037380c07">NEOLED_CT_PRSC1</a> = 4
+, <a class="el" href="neorv32_8h.html#a0a34ecaf2596fca35719d1e3e3254b51a0c9f72df8e532a7a281d98ef7cc12843">NEOLED_CT_PRSC2</a> = 5
+, <a class="el" href="neorv32_8h.html#a0a34ecaf2596fca35719d1e3e3254b51af48e001e39d86ea5a3e3e6a703fac3d3">NEOLED_CT_BUFS_0</a> = 6
+, <a class="el" href="neorv32_8h.html#a0a34ecaf2596fca35719d1e3e3254b51ab7424f141ff0ff876c678a88de3bc216">NEOLED_CT_BUFS_1</a> = 7
+, <br />
+&#160;&#160;<a class="el" href="neorv32_8h.html#a0a34ecaf2596fca35719d1e3e3254b51aeb4e70d4b53d6488d3871222fa8f04d5">NEOLED_CT_BUFS_2</a> = 8
+, <a class="el" href="neorv32_8h.html#a0a34ecaf2596fca35719d1e3e3254b51aaf17d20de91d174b021c475b29764532">NEOLED_CT_BUFS_3</a> = 9
+, <a class="el" href="neorv32_8h.html#a0a34ecaf2596fca35719d1e3e3254b51afaa21e48f96731581f8be988f3d9d72e">NEOLED_CT_T_TOT_0</a> = 10
+, <a class="el" href="neorv32_8h.html#a0a34ecaf2596fca35719d1e3e3254b51a60a7b162a737d8d4c4da8d3c59d95ee3">NEOLED_CT_T_TOT_1</a> = 11
+, <br />
+&#160;&#160;<a class="el" href="neorv32_8h.html#a0a34ecaf2596fca35719d1e3e3254b51aecf82198a63793a84b2abd5a861bb585">NEOLED_CT_T_TOT_2</a> = 12
+, <a class="el" href="neorv32_8h.html#a0a34ecaf2596fca35719d1e3e3254b51afcb6beb5fe742094d9019c505a0bbb23">NEOLED_CT_T_TOT_3</a> = 13
+, <a class="el" href="neorv32_8h.html#a0a34ecaf2596fca35719d1e3e3254b51a47472d207c1d3d9df2c537e4a82f7ac1">NEOLED_CT_T_TOT_4</a> = 14
+, <a class="el" href="neorv32_8h.html#a0a34ecaf2596fca35719d1e3e3254b51aaaa73d811e9961eeb726f82992f6b9ab">NEOLED_CT_T_ZERO_H_0</a> = 15
+, <br />
+&#160;&#160;<a class="el" href="neorv32_8h.html#a0a34ecaf2596fca35719d1e3e3254b51ab68c4bf31e3f6841ab13023010c37497">NEOLED_CT_T_ZERO_H_1</a> = 16
+, <a class="el" href="neorv32_8h.html#a0a34ecaf2596fca35719d1e3e3254b51a0cc1ab62bd2d1d755d7ca260be720986">NEOLED_CT_T_ZERO_H_2</a> = 17
+, <a class="el" href="neorv32_8h.html#a0a34ecaf2596fca35719d1e3e3254b51a5ec6c41f38b996d9735a16d37225e34e">NEOLED_CT_T_ZERO_H_3</a> = 18
+, <a class="el" href="neorv32_8h.html#a0a34ecaf2596fca35719d1e3e3254b51a295109aa287cb179eb81d2894fd3c52b">NEOLED_CT_T_ZERO_H_4</a> = 19
+, <br />
+&#160;&#160;<a class="el" href="neorv32_8h.html#a0a34ecaf2596fca35719d1e3e3254b51a281c9b1791cd5cb153443054eaba56d6">NEOLED_CT_T_ONE_H_0</a> = 20
+, <a class="el" href="neorv32_8h.html#a0a34ecaf2596fca35719d1e3e3254b51aa7dd9fceba59cecaaafdef4f29a04809">NEOLED_CT_T_ONE_H_1</a> = 21
+, <a class="el" href="neorv32_8h.html#a0a34ecaf2596fca35719d1e3e3254b51aacfe6f8794f41f405e75c3e5152d2446">NEOLED_CT_T_ONE_H_2</a> = 22
+, <a class="el" href="neorv32_8h.html#a0a34ecaf2596fca35719d1e3e3254b51a5334cdad75e1702819feee9025e95aab">NEOLED_CT_T_ONE_H_3</a> = 23
+, <br />
+&#160;&#160;<a class="el" href="neorv32_8h.html#a0a34ecaf2596fca35719d1e3e3254b51a2407385316514e372e53a23217a63fdd">NEOLED_CT_T_ONE_H_4</a> = 24
+, <a class="el" href="neorv32_8h.html#a0a34ecaf2596fca35719d1e3e3254b51a7befbeab233bc4c686f54094f5094b35">NEOLED_CT_TX_STATUS</a> = 30
+, <a class="el" href="neorv32_8h.html#a0a34ecaf2596fca35719d1e3e3254b51aa90b5e8ab41a20004a9c26ef0faa6356">NEOLED_CT_BUSY</a> = 31
+<br />
+ }</td></tr>
+<tr class="separator:a0a34ecaf2596fca35719d1e3e3254b51"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Main NEORV32 core library include file. </p>
@@ -1822,6 +1867,36 @@ Enumerations</h2></td></tr>
 
 </div>
 </div>
+<a id="afee5309dc16ee41ec41961778c8a79a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afee5309dc16ee41ec41961778c8a79a6">&#9670;&nbsp;</a></span>NEOLED_CT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NEOLED_CT&#160;&#160;&#160;(*(<a class="el" href="neorv32_8h.html#a3b61ddcb0ba2be60072440c54570e1f3">IO_REG32</a> 0xFFFFFFD8UL))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>NEOLED control register (r/w) </p>
+
+</div>
+</div>
+<a id="a3e5cdc106f7a4620c2bcf0bc08f26119"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e5cdc106f7a4620c2bcf0bc08f26119">&#9670;&nbsp;</a></span>NEOLED_DATA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NEOLED_DATA&#160;&#160;&#160;(*(<a class="el" href="neorv32_8h.html#a3b61ddcb0ba2be60072440c54570e1f3">IO_REG32</a> 0xFFFFFFDCUL))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>NEOLED TX data register (-/w) </p>
+
+</div>
+</div>
 <a id="a9bf34265291c07e2aadeaf59e81768ca"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9bf34265291c07e2aadeaf59e81768ca">&#9670;&nbsp;</a></span>NEORV32_ARCHID</h2>
 
@@ -2149,7 +2224,7 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Processor clock prescalers </p>
+<p>Processor clock prescalers select </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a10022df4c223533b04d5aebe222e8b73ad63d40139c50d76618cf1258cbdc0d05"></a>CLK_PRSC_2&#160;</td><td class="fielddoc"><p>CPU_CLK (from clk_i top signal) / 2 </p>
 </td></tr>
@@ -3186,6 +3261,77 @@ Enumerations</h2></td></tr>
 
 </div>
 </div>
+<a id="a0a34ecaf2596fca35719d1e3e3254b51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a34ecaf2596fca35719d1e3e3254b51">&#9670;&nbsp;</a></span>NEORV32_NEOLED_CT_enum</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="neorv32_8h.html#a0a34ecaf2596fca35719d1e3e3254b51">NEORV32_NEOLED_CT_enum</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>NEOLED control register bits </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a0a34ecaf2596fca35719d1e3e3254b51a8290d4ca0e1226f5ea04d2038418eb51"></a>NEOLED_CT_EN&#160;</td><td class="fielddoc"><p>NEOLED control register(0) (r/w): NEOLED global enable </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a0a34ecaf2596fca35719d1e3e3254b51a408cf3e3d89c24982538d1b62cd460dc"></a>NEOLED_CT_MODE&#160;</td><td class="fielddoc"><p>NEOLED control register(1) (r/w): TX mode (0=24-bit, 1=32-bit) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a0a34ecaf2596fca35719d1e3e3254b51a153c5ff7ff7267e47a03f8acec96e03d"></a>NEOLED_CT_BSCON&#160;</td><td class="fielddoc"><p>NEOLED control register(2) (r/w): buffer status configuration -&gt; busy_flag/IRQ config (0=at least one free entry, 1=whole buffer empty) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a0a34ecaf2596fca35719d1e3e3254b51ab94b592c94262410c69101a7129b9f3f"></a>NEOLED_CT_PRSC0&#160;</td><td class="fielddoc"><p>NEOLED control register(3) (r/w): Clock prescaler select bit 0 (pulse-clock speed select) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a0a34ecaf2596fca35719d1e3e3254b51a505396e2fcd9f21b2ae5476037380c07"></a>NEOLED_CT_PRSC1&#160;</td><td class="fielddoc"><p>NEOLED control register(4) (r/w): Clock prescaler select bit 1 (pulse-clock speed select) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a0a34ecaf2596fca35719d1e3e3254b51a0c9f72df8e532a7a281d98ef7cc12843"></a>NEOLED_CT_PRSC2&#160;</td><td class="fielddoc"><p>NEOLED control register(5) (r/w): Clock prescaler select bit 2 (pulse-clock speed select) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a0a34ecaf2596fca35719d1e3e3254b51af48e001e39d86ea5a3e3e6a703fac3d3"></a>NEOLED_CT_BUFS_0&#160;</td><td class="fielddoc"><p>NEOLED control register(6) (r/-): log2(tx buffer size) bit 0 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a0a34ecaf2596fca35719d1e3e3254b51ab7424f141ff0ff876c678a88de3bc216"></a>NEOLED_CT_BUFS_1&#160;</td><td class="fielddoc"><p>NEOLED control register(7) (r/-): log2(tx buffer size) bit 1 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a0a34ecaf2596fca35719d1e3e3254b51aeb4e70d4b53d6488d3871222fa8f04d5"></a>NEOLED_CT_BUFS_2&#160;</td><td class="fielddoc"><p>NEOLED control register(8) (r/-): log2(tx buffer size) bit 2 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a0a34ecaf2596fca35719d1e3e3254b51aaf17d20de91d174b021c475b29764532"></a>NEOLED_CT_BUFS_3&#160;</td><td class="fielddoc"><p>NEOLED control register(9) (r/-): log2(tx buffer size) bit 3 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a0a34ecaf2596fca35719d1e3e3254b51afaa21e48f96731581f8be988f3d9d72e"></a>NEOLED_CT_T_TOT_0&#160;</td><td class="fielddoc"><p>NEOLED control register(10) (r/w): pulse-clock ticks per total period bit 0 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a0a34ecaf2596fca35719d1e3e3254b51a60a7b162a737d8d4c4da8d3c59d95ee3"></a>NEOLED_CT_T_TOT_1&#160;</td><td class="fielddoc"><p>NEOLED control register(11) (r/w): pulse-clock ticks per total period bit 1 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a0a34ecaf2596fca35719d1e3e3254b51aecf82198a63793a84b2abd5a861bb585"></a>NEOLED_CT_T_TOT_2&#160;</td><td class="fielddoc"><p>NEOLED control register(12) (r/w): pulse-clock ticks per total period bit 2 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a0a34ecaf2596fca35719d1e3e3254b51afcb6beb5fe742094d9019c505a0bbb23"></a>NEOLED_CT_T_TOT_3&#160;</td><td class="fielddoc"><p>NEOLED control register(13) (r/w): pulse-clock ticks per total period bit 3 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a0a34ecaf2596fca35719d1e3e3254b51a47472d207c1d3d9df2c537e4a82f7ac1"></a>NEOLED_CT_T_TOT_4&#160;</td><td class="fielddoc"><p>NEOLED control register(14) (r/w): pulse-clock ticks per total period bit 4 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a0a34ecaf2596fca35719d1e3e3254b51aaaa73d811e9961eeb726f82992f6b9ab"></a>NEOLED_CT_T_ZERO_H_0&#160;</td><td class="fielddoc"><p>NEOLED control register(15) (r/w): pulse-clock ticks per ZERO high-time bit 0 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a0a34ecaf2596fca35719d1e3e3254b51ab68c4bf31e3f6841ab13023010c37497"></a>NEOLED_CT_T_ZERO_H_1&#160;</td><td class="fielddoc"><p>NEOLED control register(16) (r/w): pulse-clock ticks per ZERO high-time bit 1 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a0a34ecaf2596fca35719d1e3e3254b51a0cc1ab62bd2d1d755d7ca260be720986"></a>NEOLED_CT_T_ZERO_H_2&#160;</td><td class="fielddoc"><p>NEOLED control register(17) (r/w): pulse-clock ticks per ZERO high-time bit 2 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a0a34ecaf2596fca35719d1e3e3254b51a5ec6c41f38b996d9735a16d37225e34e"></a>NEOLED_CT_T_ZERO_H_3&#160;</td><td class="fielddoc"><p>NEOLED control register(18) (r/w): pulse-clock ticks per ZERO high-time bit 3 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a0a34ecaf2596fca35719d1e3e3254b51a295109aa287cb179eb81d2894fd3c52b"></a>NEOLED_CT_T_ZERO_H_4&#160;</td><td class="fielddoc"><p>NEOLED control register(19) (r/w): pulse-clock ticks per ZERO high-time bit 4 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a0a34ecaf2596fca35719d1e3e3254b51a281c9b1791cd5cb153443054eaba56d6"></a>NEOLED_CT_T_ONE_H_0&#160;</td><td class="fielddoc"><p>NEOLED control register(20) (r/w): pulse-clock ticks per ONE high-time bit 0 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a0a34ecaf2596fca35719d1e3e3254b51aa7dd9fceba59cecaaafdef4f29a04809"></a>NEOLED_CT_T_ONE_H_1&#160;</td><td class="fielddoc"><p>NEOLED control register(21) (r/w): pulse-clock ticks per ONE high-time bit 1 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a0a34ecaf2596fca35719d1e3e3254b51aacfe6f8794f41f405e75c3e5152d2446"></a>NEOLED_CT_T_ONE_H_2&#160;</td><td class="fielddoc"><p>NEOLED control register(22) (r/w): pulse-clock ticks per ONE high-time bit 2 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a0a34ecaf2596fca35719d1e3e3254b51a5334cdad75e1702819feee9025e95aab"></a>NEOLED_CT_T_ONE_H_3&#160;</td><td class="fielddoc"><p>NEOLED control register(23) (r/w): pulse-clock ticks per ONE high-time bit 3 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a0a34ecaf2596fca35719d1e3e3254b51a2407385316514e372e53a23217a63fdd"></a>NEOLED_CT_T_ONE_H_4&#160;</td><td class="fielddoc"><p>NEOLED control register(24) (r/w): pulse-clock ticks per ONE high-time bit 4 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a0a34ecaf2596fca35719d1e3e3254b51a7befbeab233bc4c686f54094f5094b35"></a>NEOLED_CT_TX_STATUS&#160;</td><td class="fielddoc"><p>NEOLED control register(30) (r/-): serial transmit engine still busy when set </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a0a34ecaf2596fca35719d1e3e3254b51aa90b5e8ab41a20004a9c26ef0faa6356"></a>NEOLED_CT_BUSY&#160;</td><td class="fielddoc"><p>NEOLED control register(31) (r/-): busy / buffer status flag (configured via <a class="el" href="neorv32_8h.html#a0a34ecaf2596fca35719d1e3e3254b51a153c5ff7ff7267e47a03f8acec96e03d">NEOLED_CT_BSCON</a>) </p>
+</td></tr>
+</table>
+
+</div>
+</div>
 <a id="a1f3f718bd93cb201c5cead84bc00e5d0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1f3f718bd93cb201c5cead84bc00e5d0">&#9670;&nbsp;</a></span>NEORV32_PWM_CT_enum</h2>
 
@@ -3390,6 +3536,8 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><a id="a7c2df941d0405641ae6c4c9c8b4cb18da58ee655471a1381032d8c069a2edf958"></a>SYSINFO_FEATURES_IO_NCO&#160;</td><td class="fielddoc"><p>SYSINFO_FEATURES (25) (r/-): Numerically-controlled oscillator implemented when 1 (via IO_NCO_EN generic) </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a7c2df941d0405641ae6c4c9c8b4cb18dab2c90adb1f7d8012ed6a69a91720e87f"></a>SYSINFO_FEATURES_IO_UART1&#160;</td><td class="fielddoc"><p>SYSINFO_FEATURES (26) (r/-): Secondary universal asynchronous receiver/transmitter 1 implemented when 1 (via IO_UART1_EN generic) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a7c2df941d0405641ae6c4c9c8b4cb18da1cc62fc88de103088d1fc9f069be3e46"></a>SYSINFO_FEATURES_IO_NEOLED&#160;</td><td class="fielddoc"><p>SYSINFO_FEATURES (27) (r/-): NeoPixel-compatible smart LED interface implemented when 1 (via IO_NEOLED_EN generic) </p>
 </td></tr>
 </table>
 
