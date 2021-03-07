@@ -118,6 +118,7 @@ Key Features</h3>
 <li>serial interfaces (SPI, TWI, UARTs)</li>
 <li>general purpose IO and PWM channels</li>
 <li>external bus interface (Wishbone / <a href="#AXI4-Connectivity">AXI4</a>)</li>
+<li>dedicated NeoPixel(c) LED interface</li>
 <li>subsystem for custom co-processors</li>
 <li><a href="#NEORV32-Processor-Features">more ...</a></li>
 </ul>
@@ -159,7 +160,7 @@ Status</h3>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyLeft"><a href="https://github.com/stnolting/neorv32">NEORV32 processor</a>   </td><td class="markdownTableBodyLeft"><a href="https://github.com/stnolting/neorv32/actions?query=workflow%3A%22Processor+Check%22"><img src="https://github.com/stnolting/neorv32/workflows/Processor%20Check/badge.svg" alt="Processor Check" style="pointer-events: none;" class="inline"/></a>    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft"><a href="https://stnolting.github.io/neorv32/files.html">SW Framework Documentation (online @GH-pages)</a>   </td><td class="markdownTableBodyLeft"><a href="https://stnolting.github.io/neorv32/files.html"><img src="https://github.com/stnolting/neorv32/workflows/Deploy%20SW%20Framework%20Documentation%20to%20GitHub-Pages/badge.svg" alt="Doc@GitHub-pages" style="pointer-events: none;" class="inline"/></a>    </td></tr>
+<td class="markdownTableBodyLeft"><a href="https://stnolting.github.io/neorv32/files.html">SW Framework Documentation (online at GH-pages)</a>   </td><td class="markdownTableBodyLeft"><a href="https://stnolting.github.io/neorv32/files.html"><img src="https://github.com/stnolting/neorv32/workflows/Deploy%20SW%20Framework%20Documentation%20to%20GitHub-Pages/badge.svg" alt="Doc@GitHub-pages" style="pointer-events: none;" class="inline"/></a>    </td></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyLeft"><a href="https://github.com/stnolting/riscv-gcc-prebuilt">Pre-built toolchains</a>   </td><td class="markdownTableBodyLeft"><a href="https://github.com/stnolting/riscv-gcc-prebuilt/actions?query=workflow%3A%22Test+Toolchains%22"><img src="https://github.com/stnolting/riscv-gcc-prebuilt/workflows/Test%20Toolchains/badge.svg" alt="Test Toolchains" style="pointer-events: none;" class="inline"/></a>    </td></tr>
 <tr class="markdownTableRowEven">
@@ -187,6 +188,7 @@ NEORV32 Processor Features</h3>
 <li>ring-oscillator-based true random number generator (<b>TRNG</b>)</li>
 <li>custom functions subsystem (<b>CFS</b>) for tightly-coupled custom co-processor extensions</li>
 <li>numerically-controlled oscillator (<b>NCO</b>) with three independent channels</li>
+<li>smart LED interface (<b>NEOLED</b>) - WS2812 / NeoPixel(c) compatible</li>
 <li>system configuration information memory to check hardware configuration by software (<b>SYSINFO</b>)</li>
 </ul>
 <h3><a class="anchor" id="autotoc_md7"></a>
@@ -362,7 +364,7 @@ NEORV32 CPU</h3>
 <p>Setups with enabled "embedded CPU extension" <code>E</code> show the same LUT and FF utilization and identical f_max as the according <code>I</code> configuration. However, the size of the register file is cut in half.</p>
 <h3><a class="anchor" id="autotoc_md25"></a>
 NEORV32 Processor-Internal Peripherals and Memories</h3>
-<p>Results generated for hardware version <a href="https://github.com/stnolting/neorv32/blob/master/CHANGELOG.md"><code>1.5.1.4</code></a>.</p>
+<p>Results generated for hardware version <a href="https://github.com/stnolting/neorv32/blob/master/CHANGELOG.md"><code>1.5.2.4</code></a>.</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadLeft">Module   </th><th class="markdownTableHeadLeft">Description   </th><th class="markdownTableHeadRight">LEs   </th><th class="markdownTableHeadRight">FFs   </th><th class="markdownTableHeadRight">Memory bits   </th><th class="markdownTableHeadRight">DSPs    </th></tr>
@@ -385,20 +387,22 @@ NEORV32 Processor-Internal Peripherals and Memories</h3>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyLeft">NCO   </td><td class="markdownTableBodyLeft">Numerically-controlled oscillator   </td><td class="markdownTableBodyRight">254   </td><td class="markdownTableBodyRight">226   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0    </td></tr>
 <tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">NEOLED   </td><td class="markdownTableBodyLeft">Smart LED Interface (NeoPixel-compatibile) [4x FIFO]   </td><td class="markdownTableBodyRight">347   </td><td class="markdownTableBodyRight">309   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0    </td></tr>
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyLeft">PWM   </td><td class="markdownTableBodyLeft">Pulse-width modulation controller   </td><td class="markdownTableBodyRight">71   </td><td class="markdownTableBodyRight">69   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0    </td></tr>
-<tr class="markdownTableRowOdd">
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyLeft">SPI   </td><td class="markdownTableBodyLeft">Serial peripheral interface   </td><td class="markdownTableBodyRight">138   </td><td class="markdownTableBodyRight">124   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0    </td></tr>
-<tr class="markdownTableRowEven">
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyLeft">SYSINFO   </td><td class="markdownTableBodyLeft">System configuration information memory   </td><td class="markdownTableBodyRight">11   </td><td class="markdownTableBodyRight">10   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0    </td></tr>
-<tr class="markdownTableRowOdd">
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyLeft">TRNG   </td><td class="markdownTableBodyLeft">True random number generator   </td><td class="markdownTableBodyRight">132   </td><td class="markdownTableBodyRight">105   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0    </td></tr>
-<tr class="markdownTableRowEven">
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyLeft">TWI   </td><td class="markdownTableBodyLeft">Two-wire interface   </td><td class="markdownTableBodyRight">77   </td><td class="markdownTableBodyRight">46   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft">UART0/1   </td><td class="markdownTableBodyLeft">Universal asynchronous receiver/transmitter 0/1   </td><td class="markdownTableBodyRight">176   </td><td class="markdownTableBodyRight">132   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft">WDT   </td><td class="markdownTableBodyLeft">Watchdog timer   </td><td class="markdownTableBodyRight">60   </td><td class="markdownTableBodyRight">45   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0    </td></tr>
+<td class="markdownTableBodyLeft">UART0/1   </td><td class="markdownTableBodyLeft">Universal asynchronous receiver/transmitter 0/1   </td><td class="markdownTableBodyRight">176   </td><td class="markdownTableBodyRight">132   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0    </td></tr>
 <tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">WDT   </td><td class="markdownTableBodyLeft">Watchdog timer   </td><td class="markdownTableBodyRight">60   </td><td class="markdownTableBodyRight">45   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0    </td></tr>
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyLeft">WISHBONE   </td><td class="markdownTableBodyLeft">External memory interface   </td><td class="markdownTableBodyRight">129   </td><td class="markdownTableBodyRight">104   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td></tr>
 </table>
 <h3><a class="anchor" id="autotoc_md26"></a>
@@ -605,6 +609,7 @@ Proprietary  Notice</h4>
 <p>"Cyclone" and "Quartus Prime Lite" are trademarks of Intel Corporation.</p>
 <p>"iCE40", "UltraPlus" and "Radiant" are trademarks of Lattice Semiconductor Corporation.</p>
 <p>"AXI", "AXI4" and "AXI4-Lite" are trademarks of Arm Holdings plc.</p>
+<p>"NeoPixel" is a trademark of Adafruit Industries.</p>
 <h2><a class="anchor" id="autotoc_md44"></a>
 Acknowledgements</h2>
 <p><a href="https://riscv.org/"><img src="https://raw.githubusercontent.com/stnolting/neorv32/master/docs/figures/riscv_logo.png" alt="RISC-V" class="inline"/></a></p>
