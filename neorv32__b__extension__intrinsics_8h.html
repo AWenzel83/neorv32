@@ -280,6 +280,12 @@ Functions</h2></td></tr>
 <tr class="separator:ad856e3227addb6a8796f914e96721fb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a95b35ff72ddcbf92aa7ef1af82bcc311"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="neorv32__b__extension__intrinsics_8h.html#a95b35ff72ddcbf92aa7ef1af82bcc311">riscv_intrinsic_sbexti20</a> (uint32_t rs1)</td></tr>
 <tr class="separator:a95b35ff72ddcbf92aa7ef1af82bcc311"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60cc372a541034b6189e972a02cac205"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="neorv32__b__extension__intrinsics_8h.html#a60cc372a541034b6189e972a02cac205">riscv_intrinsic_sh1add</a> (uint32_t rs1, uint32_t rs2)</td></tr>
+<tr class="separator:a60cc372a541034b6189e972a02cac205"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa92c7213703bbf759d22aa564f58c0d4"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="neorv32__b__extension__intrinsics_8h.html#aa92c7213703bbf759d22aa564f58c0d4">riscv_intrinsic_sh2add</a> (uint32_t rs1, uint32_t rs2)</td></tr>
+<tr class="separator:aa92c7213703bbf759d22aa564f58c0d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4aeea97fa7dfd6aebecbd82a8ba5c54c"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="neorv32__b__extension__intrinsics_8h.html#a4aeea97fa7dfd6aebecbd82a8ba5c54c">riscv_intrinsic_sh3add</a> (uint32_t rs1, uint32_t rs2)</td></tr>
+<tr class="separator:a4aeea97fa7dfd6aebecbd82a8ba5c54c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9755f1969427bcffa5aaed4843376698"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="neorv32__b__extension__intrinsics_8h.html#a9755f1969427bcffa5aaed4843376698">riscv_emulate_clz</a> (uint32_t rs1)</td></tr>
 <tr class="separator:a9755f1969427bcffa5aaed4843376698"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac809501c70627d6fd8ba72f904fd3dc1"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="neorv32__b__extension__intrinsics_8h.html#ac809501c70627d6fd8ba72f904fd3dc1">riscv_emulate_ctz</a> (uint32_t rs1)</td></tr>
@@ -322,6 +328,12 @@ Functions</h2></td></tr>
 <tr class="separator:a8716ae310425fd88d7462474ea31fa42"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a44000ff539f48c35d47259080e86c747"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="neorv32__b__extension__intrinsics_8h.html#a44000ff539f48c35d47259080e86c747">riscv_emulate_sbext</a> (uint32_t rs1, uint32_t rs2)</td></tr>
 <tr class="separator:a44000ff539f48c35d47259080e86c747"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a103cd5b372ab5c78ad14178a8134b60f"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="neorv32__b__extension__intrinsics_8h.html#a103cd5b372ab5c78ad14178a8134b60f">riscv_emulate_sh1add</a> (uint32_t rs1, uint32_t rs2)</td></tr>
+<tr class="separator:a103cd5b372ab5c78ad14178a8134b60f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a248fa03544ee45cadd1202e20e45858d"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="neorv32__b__extension__intrinsics_8h.html#a248fa03544ee45cadd1202e20e45858d">riscv_emulate_sh2add</a> (uint32_t rs1, uint32_t rs2)</td></tr>
+<tr class="separator:a248fa03544ee45cadd1202e20e45858d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac9706719eee90ef1945101f17c26710"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="neorv32__b__extension__intrinsics_8h.html#aac9706719eee90ef1945101f17c26710">riscv_emulate_sh3add</a> (uint32_t rs1, uint32_t rs2)</td></tr>
+<tr class="separator:aac9706719eee90ef1945101f17c26710"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>"Intrinsic" library for the NEORV32 bit manipulation (B.Zbb) extension. Also provides emulation functions for all intrinsics (functionality re-built in pure software). </p>
@@ -2273,6 +2285,117 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a103cd5b372ab5c78ad14178a8134b60f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a103cd5b372ab5c78ad14178a8134b60f">&#9670;&nbsp;</a></span>riscv_emulate_sh1add()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t riscv_emulate_sh1add </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>rs1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>rs2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Intrinsic: Bit manipulation SH1ADD (shifted-add &lt;&lt; 1) [emulation]</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">rs1</td><td>Source operand 1 (a0). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">rs2</td><td>Source operand 2 (a0). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>(rs1 &lt;&lt; 1) + rs2 </dd></dl>
+
+</div>
+</div>
+<a id="a248fa03544ee45cadd1202e20e45858d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a248fa03544ee45cadd1202e20e45858d">&#9670;&nbsp;</a></span>riscv_emulate_sh2add()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t riscv_emulate_sh2add </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>rs1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>rs2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Intrinsic: Bit manipulation SH2ADD (shifted-add &lt;&lt; 2) [emulation]</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">rs1</td><td>Source operand 1 (a0). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">rs2</td><td>Source operand 2 (a0). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>(rs1 &lt;&lt; 2) + rs2 </dd></dl>
+
+</div>
+</div>
+<a id="aac9706719eee90ef1945101f17c26710"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac9706719eee90ef1945101f17c26710">&#9670;&nbsp;</a></span>riscv_emulate_sh3add()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t riscv_emulate_sh3add </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>rs1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>rs2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Intrinsic: Bit manipulation SH3ADD (shifted-add &lt;&lt; 3) [emulation]</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">rs1</td><td>Source operand 1 (a0). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">rs2</td><td>Source operand 2 (a0). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>(rs1 &lt;&lt; 3) + rs2 </dd></dl>
+
+</div>
+</div>
 <a id="a17f938b0871d4006abda4e9847750efe"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a17f938b0871d4006abda4e9847750efe">&#9670;&nbsp;</a></span>riscv_emulate_xnor()</h2>
 
@@ -3130,6 +3253,120 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Sign extended half-word (operand(15:0)). </dd></dl>
+
+</div>
+</div>
+<a id="a60cc372a541034b6189e972a02cac205"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60cc372a541034b6189e972a02cac205">&#9670;&nbsp;</a></span>riscv_intrinsic_sh1add()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t riscv_intrinsic_sh1add </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>rs1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>rs2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Intrinsic: Bit manipulation SH1ADD (shifted-add &lt;&lt; 1) [B.Zba]</p>
+<dl class="section note"><dt>Note</dt><dd>"noinline" attributed to make sure arguments/return values are in a0 and a1.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">rs1</td><td>Source operand 1 (a0). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">rs2</td><td>Source operand 2 (a0). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>(rs1 &lt;&lt; 1) + rs2 </dd></dl>
+
+</div>
+</div>
+<a id="aa92c7213703bbf759d22aa564f58c0d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa92c7213703bbf759d22aa564f58c0d4">&#9670;&nbsp;</a></span>riscv_intrinsic_sh2add()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t riscv_intrinsic_sh2add </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>rs1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>rs2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Intrinsic: Bit manipulation SH2ADD (shifted-add &lt;&lt; 2) [B.Zba]</p>
+<dl class="section note"><dt>Note</dt><dd>"noinline" attributed to make sure arguments/return values are in a0 and a1.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">rs1</td><td>Source operand 1 (a0). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">rs2</td><td>Source operand 2 (a0). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>(rs1 &lt;&lt; 2) + rs2 </dd></dl>
+
+</div>
+</div>
+<a id="a4aeea97fa7dfd6aebecbd82a8ba5c54c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4aeea97fa7dfd6aebecbd82a8ba5c54c">&#9670;&nbsp;</a></span>riscv_intrinsic_sh3add()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t riscv_intrinsic_sh3add </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>rs1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>rs2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Intrinsic: Bit manipulation SH3ADD (shifted-add &lt;&lt; 3) [B.Zba]</p>
+<dl class="section note"><dt>Note</dt><dd>"noinline" attributed to make sure arguments/return values are in a0 and a1.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">rs1</td><td>Source operand 1 (a0). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">rs2</td><td>Source operand 2 (a0). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>(rs1 &lt;&lt; 3) + rs2 </dd></dl>
 
 </div>
 </div>

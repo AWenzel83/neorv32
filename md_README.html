@@ -118,7 +118,7 @@ Key Features</h3>
 <li>serial interfaces (SPI, TWI, UARTs)</li>
 <li>general purpose IO and PWM channels</li>
 <li>external bus interface (Wishbone / <a href="#AXI4-Connectivity">AXI4</a>)</li>
-<li>dedicated NeoPixel(c) LED interface</li>
+<li>dedicated NeoPixel(TM) LED interface</li>
 <li>subsystem for custom co-processors</li>
 <li><a href="#NEORV32-Processor-Features">more ...</a></li>
 </ul>
@@ -222,6 +222,7 @@ General Features</h4>
 <li>Support via intrisc library (see <a href="https://github.com/stnolting/neorv32/tree/master/sw/example/bit_manipulation"><code>sw/example/bit_manipulation</code></a>)</li>
 <li><code>Zbb</code> base instruction set: <code>CLZ</code> <code>CTZ</code> <code>CPOP</code> <code>SEXT.B</code> <code>SEXT.H</code> <code>MIN[U]</code> <code>MAX[U]</code> <code>ANDN</code> <code>ORN</code> <code>XNOR</code> <code>ROL</code> <code>ROR[I]</code> <code>zext</code>(<em>pseudo-instruction</em> for <code>PACK rd, rs, zero</code>) <code>rev8</code>(<em>pseudo-instruction</em> for <code>GREVI rd, rs, -8</code>) <code>orc.b</code>(<em>pseudo-instruction</em> for <code>GORCI rd, rs, 7</code>)</li>
 <li><code>Zbs</code> single-bit instructions: <code>SBSET[I]</code> <code>SBCLR[I]</code> <code>SBINV[I]</code> <code>SBEXT[I]</code></li>
+<li><code>Zba</code> shifted-add instructions: <code>SH1ADD</code> <code>SH2ADD</code> <code>SH3ADD</code></li>
 </ul>
 <h4><a class="anchor" id="autotoc_md11"></a>
 &lt;tt&gt;C&lt;/tt&gt; - Compressed instructions extension</h4>

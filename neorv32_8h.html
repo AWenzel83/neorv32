@@ -636,10 +636,14 @@ Enumerations</h2></td></tr>
 <br />
  }</td></tr>
 <tr class="separator:afed7f00bbb39468f038d9ca6fbac830c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac2e3396ba6d5de267f4ef0fbd1a16ab2"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="neorv32_8h.html#ac2e3396ba6d5de267f4ef0fbd1a16ab2">NEORV32_CSR_MZEXT_enum</a> { <a class="el" href="neorv32_8h.html#ac2e3396ba6d5de267f4ef0fbd1a16ab2a8c3539e99b89eb8a542935992bccf7c9">CSR_MZEXT_ZICSR</a> = 0
+<tr class="memitem:ac2e3396ba6d5de267f4ef0fbd1a16ab2"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="neorv32_8h.html#ac2e3396ba6d5de267f4ef0fbd1a16ab2">NEORV32_CSR_MZEXT_enum</a> { <br />
+&#160;&#160;<a class="el" href="neorv32_8h.html#ac2e3396ba6d5de267f4ef0fbd1a16ab2a8c3539e99b89eb8a542935992bccf7c9">CSR_MZEXT_ZICSR</a> = 0
 , <a class="el" href="neorv32_8h.html#ac2e3396ba6d5de267f4ef0fbd1a16ab2a59bf3760ac552fdebe9bcb8cc8db8ca8">CSR_MZEXT_ZIFENCEI</a> = 1
 , <a class="el" href="neorv32_8h.html#ac2e3396ba6d5de267f4ef0fbd1a16ab2a36ba3effd8fb6ecac845f65b86379460">CSR_MZEXT_ZBB</a> = 2
 , <a class="el" href="neorv32_8h.html#ac2e3396ba6d5de267f4ef0fbd1a16ab2ad8074f7859efa067be3bbd20c86a5c9f">CSR_MZEXT_ZBS</a> = 3
+, <br />
+&#160;&#160;<a class="el" href="neorv32_8h.html#ac2e3396ba6d5de267f4ef0fbd1a16ab2ae21df80e77676d836a3788dc352d2d51">CSR_MZEXT_ZBA</a> = 4
+<br />
  }</td></tr>
 <tr class="separator:ac2e3396ba6d5de267f4ef0fbd1a16ab2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5cb925a3e41efd5e767bb39b3ee60cfe"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="neorv32_8h.html#a5cb925a3e41efd5e767bb39b3ee60cfe">NEORV32_HPMCNT_EVENT_enum</a> { <br />
@@ -3048,13 +3052,15 @@ Enumerations</h2></td></tr>
 </div><div class="memdoc">
 <p>CPU <b>mzext</b> custom CSR (r/-): Implemented Z* CPU extensions </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ac2e3396ba6d5de267f4ef0fbd1a16ab2a8c3539e99b89eb8a542935992bccf7c9"></a>CSR_MZEXT_ZICSR&#160;</td><td class="fielddoc"><p>CPU mzext CSR (0): Zicsr extension available when set (r/-) </p>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ac2e3396ba6d5de267f4ef0fbd1a16ab2a8c3539e99b89eb8a542935992bccf7c9"></a>CSR_MZEXT_ZICSR&#160;</td><td class="fielddoc"><p>CPU mzext CSR (0): Zicsr extension (I sub-extension) available when set (r/-) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="ac2e3396ba6d5de267f4ef0fbd1a16ab2a59bf3760ac552fdebe9bcb8cc8db8ca8"></a>CSR_MZEXT_ZIFENCEI&#160;</td><td class="fielddoc"><p>CPU mzext CSR (1): Zifencei extension available when set (r/-) </p>
+<tr><td class="fieldname"><a id="ac2e3396ba6d5de267f4ef0fbd1a16ab2a59bf3760ac552fdebe9bcb8cc8db8ca8"></a>CSR_MZEXT_ZIFENCEI&#160;</td><td class="fielddoc"><p>CPU mzext CSR (1): Zifencei extension (I sub-extension) available when set (r/-) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="ac2e3396ba6d5de267f4ef0fbd1a16ab2a36ba3effd8fb6ecac845f65b86379460"></a>CSR_MZEXT_ZBB&#160;</td><td class="fielddoc"><p>CPU mzext CSR (2): Zbb extension available when set (r/-) </p>
+<tr><td class="fieldname"><a id="ac2e3396ba6d5de267f4ef0fbd1a16ab2a36ba3effd8fb6ecac845f65b86379460"></a>CSR_MZEXT_ZBB&#160;</td><td class="fielddoc"><p>CPU mzext CSR (2): Zbb extension (B sub-extension) available when set (r/-) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="ac2e3396ba6d5de267f4ef0fbd1a16ab2ad8074f7859efa067be3bbd20c86a5c9f"></a>CSR_MZEXT_ZBS&#160;</td><td class="fielddoc"><p>CPU mzext CSR (3): Zbs extension available when set (r/-) </p>
+<tr><td class="fieldname"><a id="ac2e3396ba6d5de267f4ef0fbd1a16ab2ad8074f7859efa067be3bbd20c86a5c9f"></a>CSR_MZEXT_ZBS&#160;</td><td class="fielddoc"><p>CPU mzext CSR (3): Zbs extension (B sub-extension) available when set (r/-) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ac2e3396ba6d5de267f4ef0fbd1a16ab2ae21df80e77676d836a3788dc352d2d51"></a>CSR_MZEXT_ZBA&#160;</td><td class="fielddoc"><p>CPU mzext CSR (4): Zba extension (B sub-extension) available when set (r/-) </p>
 </td></tr>
 </table>
 
