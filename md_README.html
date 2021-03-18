@@ -216,8 +216,9 @@ General Features</h4>
 <h4><a class="anchor" id="autotoc_md10"></a>
 &lt;tt&gt;B&lt;/tt&gt; - Bit manipulation instructions extension</h4>
 <ul>
-<li>:construction: <b>WORK-IN-PROGRESS</b> :construction:</li>
-<li>:warning: The bit-manipulation extension has not been officially ratified yet!</li>
+<li>:construction: <b>work-in-progress</b> :construction:</li>
+<li>:warning: this extension has not been officially ratified yet!</li>
+<li>:books: more information can be found here: <a href="https://github.com/riscv/riscv-bitmanip">RISC-V <code>B</code> spec.</a></li>
 <li>Compatible to <a href="https://raw.githubusercontent.com/stnolting/neorv32/master/docs/bitmanip-draft.pdf">v0.94-draft</a> of the bit manipulation spec</li>
 <li>Support via intrisc library (see <a href="https://github.com/stnolting/neorv32/tree/master/sw/example/bit_manipulation"><code>sw/example/bit_manipulation</code></a>)</li>
 <li><code>Zbb</code> base instruction set: <code>CLZ</code> <code>CTZ</code> <code>CPOP</code> <code>SEXT.B</code> <code>SEXT.H</code> <code>MIN[U]</code> <code>MAX[U]</code> <code>ANDN</code> <code>ORN</code> <code>XNOR</code> <code>ROL</code> <code>ROR[I]</code> <code>zext</code>(<em>pseudo-instruction</em> for <code>PACK rd, rs, zero</code>) <code>rev8</code>(<em>pseudo-instruction</em> for <code>GREVI rd, rs, -8</code>) <code>orc.b</code>(<em>pseudo-instruction</em> for <code>GORCI rd, rs, 7</code>)</li>
@@ -231,7 +232,6 @@ General Features</h4>
 <li>Jump and branch instructions: <code>C.J</code> <code>C.JAL</code> <code>C.JR</code> <code>C.JALR</code> <code>C.BEQZ</code> <code>C.BNEZ</code></li>
 <li>Memory instructions: <code>C.LW</code> <code>C.SW</code> <code>C.LWSP</code> <code>C.SWSP</code></li>
 <li>System instructions: <code>C.EBREAK</code> (requires <code>Zicsr</code> extension)</li>
-<li>Floating-point instructions: <code>C.FLW</code> <code>C.FSW</code> <code>C.FLWSP</code> <code>C.FSWSP</code> (requires <code>F</code> extension)</li>
 <li>Pseudo-instructions are not listed</li>
 </ul>
 <h4><a class="anchor" id="autotoc_md12"></a>
@@ -240,13 +240,6 @@ General Features</h4>
 <li>Reduced register file (only the 16 lowest registers are implemented)</li>
 </ul>
 <h4><a class="anchor" id="autotoc_md13"></a>
-&lt;tt&gt;F&lt;/tt&gt; - Single-precision floating-point extension</h4>
-<ul>
-<li>:construction: <b>WORK-IN-PROGRESS</b> :construction:</li>
-<li>:warning: the <code>F</code> extension is not operational yet!</li>
-<li>:information_source: check out the <a href="https://github.com/stnolting/neorv32/projects/4">F-extension project board</a> for the current implementation state</li>
-</ul>
-<h4><a class="anchor" id="autotoc_md14"></a>
 &lt;tt&gt;I&lt;/tt&gt; - Base integer instruction set</h4>
 <ul>
 <li>ALU instructions: <code>LUI</code> <code>AUIPC</code> <code>ADD[I]</code> <code>SLT[I][U]</code> <code>XOR[I]</code> <code>OR[I]</code> <code>AND[I]</code> <code>SLL[I]</code> <code>SRL[I]</code> <code>SRA[I]</code> <code>SUB</code></li>
@@ -255,7 +248,7 @@ General Features</h4>
 <li>System instructions: <code>ECALL</code> <code>EBREAK</code> <code>FENCE</code></li>
 <li>Pseudo-instructions are not listed</li>
 </ul>
-<h4><a class="anchor" id="autotoc_md15"></a>
+<h4><a class="anchor" id="autotoc_md14"></a>
 &lt;tt&gt;M&lt;/tt&gt; - Integer multiplication and division hardware extension</h4>
 <ul>
 <li>Multiplication instructions: <code>MUL</code> <code>MULH</code> <code>MULHSU</code> <code>MULHU</code></li>
@@ -263,19 +256,27 @@ General Features</h4>
 <li>By default, the multiplier and divider cores use an iterative bit-serial processing scheme</li>
 <li>Multiplications can be mapped to DSPs via the <code>FAST_MUL_EN</code> generic to increase performance</li>
 </ul>
-<h4><a class="anchor" id="autotoc_md16"></a>
+<h4><a class="anchor" id="autotoc_md15"></a>
 &lt;tt&gt;U&lt;/tt&gt; - Privileged architecture - User mode extension</h4>
 <ul>
 <li>Requires <code>Zicsr</code> extension</li>
 <li>Privilege levels: <code>M</code> (machine mode) + less-privileged <code>U</code> (user mode)</li>
 </ul>
-<h4><a class="anchor" id="autotoc_md17"></a>
+<h4><a class="anchor" id="autotoc_md16"></a>
 &lt;tt&gt;X&lt;/tt&gt; - NEORV32-specific CPU extensions</h4>
 <ul>
 <li>The NEORV32-specific extensions are always enabled and are indicated via the <code>X</code> bit set in the <code>misa</code> CSR.</li>
 <li>16 <em>fast interrupt</em> request channels with according control/status bits in <code>mie</code> and <code>mip</code> and custom exception codes in <code>mcause</code></li>
 <li><code>mzext</code> CSR to check for implemented <code>Z*</code> CPU extensions (like <code>Zifencei</code>)</li>
 <li>All undefined/umimplemented/malformed/illegal instructions do raise an illegal instruction exception</li>
+</ul>
+<h4><a class="anchor" id="autotoc_md17"></a>
+&lt;tt&gt;Zfinx&lt;/tt&gt; - Single-precision floating-point extension (using integer &lt;tt&gt;x&lt;/tt&gt; registers)</h4>
+<ul>
+<li>:construction: <b>work-in-progress</b> :construction:</li>
+<li>:warning: this extension has not been officially ratified yet!</li>
+<li>:books: more information can be found here: <a href="https://github.com/riscv/riscv-zfinx">RISC-V <code>Zfinx</code> spec.</a></li>
+<li>:information_source: check out the <a href="https://github.com/stnolting/neorv32/projects/4">floating-point extension project board</a> for the current implementation state</li>
 </ul>
 <h4><a class="anchor" id="autotoc_md18"></a>
 &lt;tt&gt;Zicsr&lt;/tt&gt; - Privileged architecture - CSR access extension</h4>
