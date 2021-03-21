@@ -83,6 +83,7 @@ The NEORV32 RISC-V Processor</h1>
 </ul>
 <h2><a class="anchor" id="autotoc_md1"></a>
 Overview</h2>
+<p><img src="https://raw.githubusercontent.com/stnolting/neorv32/master/docs/figures/neorv32_processor.png" alt="neorv32 Overview" class="inline"/></p>
 <p>The NEORV32 Processor is a customizable microcontroller-like system on chip (SoC) that is based on the RISC-V NEORV32 CPU. The processor is intended as <em>ready-to-go</em> auxiliary processor within a larger SoC designs or as stand-alone custom microcontroller.</p>
 <p>:books: For detailed information take a look at the <a href="https://raw.githubusercontent.com/stnolting/neorv32/master/docs/NEORV32.pdf">NEORV32 data sheet (pdf)</a>. The doxygen-based documentation of the <em>software framework</em> is available online at <a href="https://stnolting.github.io/neorv32/files.html">GitHub-pages</a>.</p>
 <p>:label: The project’s change log is available as <a href="https://github.com/stnolting/neorv32/blob/master/CHANGELOG.md">CHANGELOG.md</a> in the root directory of this repository. To see the changes between <em>stable</em> releases visit the project's <a href="https://github.com/stnolting/neorv32/releases">release page</a>.</p>
@@ -171,7 +172,6 @@ Features</h2>
 <p>The full-blown data sheet of the NEORV32 Processor and CPU is available as pdf file: <a href="https://raw.githubusercontent.com/stnolting/neorv32/master/docs/NEORV32.pdf">:page_facing_up: NEORV32 data sheet</a>.</p>
 <h3><a class="anchor" id="autotoc_md6"></a>
 NEORV32 Processor Features</h3>
-<p><img src="https://raw.githubusercontent.com/stnolting/neorv32/master/docs/figures/neorv32_processor.png" alt="neorv32 Overview" class="inline"/></p>
 <p>The NEORV32 Processor provides a full-scale microcontroller-like SoC based on the NEORV32 CPU. The setup is highly customizable via the processor's top generics and already provides the following <em>optional</em> modules:</p>
 <ul>
 <li>processor-internal data and instruction memories (<b>DMEM</b> / <b>IMEM</b>) &amp; cache (<b>iCACHE</b>)</li>
@@ -220,7 +220,7 @@ General Features</h4>
 <li>:warning: this extension has not been officially ratified yet!</li>
 <li>:books: more information can be found here: <a href="https://github.com/riscv/riscv-bitmanip">RISC-V <code>B</code> spec.</a></li>
 <li>Compatible to <a href="https://raw.githubusercontent.com/stnolting/neorv32/master/docs/bitmanip-draft.pdf">v0.94-draft</a> of the bit manipulation spec</li>
-<li>Support via intrisc library (see <a href="https://github.com/stnolting/neorv32/tree/master/sw/example/bit_manipulation"><code>sw/example/bit_manipulation</code></a>)</li>
+<li>Support via intrinsic library (see <a href="https://github.com/stnolting/neorv32/tree/master/sw/example/bit_manipulation"><code>sw/example/bit_manipulation</code></a>)</li>
 <li><code>Zbb</code> base instruction set: <code>CLZ</code> <code>CTZ</code> <code>CPOP</code> <code>SEXT.B</code> <code>SEXT.H</code> <code>MIN[U]</code> <code>MAX[U]</code> <code>ANDN</code> <code>ORN</code> <code>XNOR</code> <code>ROL</code> <code>ROR[I]</code> <code>zext</code>(<em>pseudo-instruction</em> for <code>PACK rd, rs, zero</code>) <code>rev8</code>(<em>pseudo-instruction</em> for <code>GREVI rd, rs, -8</code>) <code>orc.b</code>(<em>pseudo-instruction</em> for <code>GORCI rd, rs, 7</code>)</li>
 <li><code>Zbs</code> single-bit instructions: <code>SBSET[I]</code> <code>SBCLR[I]</code> <code>SBINV[I]</code> <code>SBEXT[I]</code></li>
 <li><code>Zba</code> shifted-add instructions: <code>SH1ADD</code> <code>SH2ADD</code> <code>SH3ADD</code></li>

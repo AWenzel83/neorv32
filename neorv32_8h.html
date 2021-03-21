@@ -80,6 +80,7 @@ $(function() {
 <code>#include &lt;inttypes.h&gt;</code><br />
 <code>#include &lt;limits.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="neorv32__cpu_8h_source.html">neorv32_cpu.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="neorv32__intrinsics_8h_source.html">neorv32_intrinsics.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="neorv32__rte_8h_source.html">neorv32_rte.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="neorv32__cfs_8h_source.html">neorv32_cfs.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="neorv32__gpio_8h_source.html">neorv32_gpio.h</a>&quot;</code><br />
@@ -225,318 +226,322 @@ Macros</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
 <tr class="memitem:ac065a8cc32eed9a69ea1798492a69f49"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49">NEORV32_CSR_enum</a> { <br />
-&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ad0e5de789d6390f750b8af03cdd15450">CSR_MSTATUS</a> = 0x300
-, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ade079242596ce14ce1ba9842ed29b84c">CSR_MISA</a> = 0x301
+&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a625f606c14fd4d7224d7109e10508e7a">CSR_FFLAGS</a> = 0x001
+, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a7f198c465959dde37b7056dd06d45812">CSR_FRM</a> = 0x002
+, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a5e1abf46b4f55bd18e1d132b32696ab6">CSR_FCSR</a> = 0x003
+, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ad0e5de789d6390f750b8af03cdd15450">CSR_MSTATUS</a> = 0x300
+, <br />
+&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ade079242596ce14ce1ba9842ed29b84c">CSR_MISA</a> = 0x301
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49acc0f9f5f3b5702f1b57f2ba3b6b62610">CSR_MIE</a> = 0x304
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49aa632d218400268df6dc6b289ff088d21">CSR_MTVEC</a> = 0x305
+, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a1860dd9579906c67a3565063043dcf78">CSR_MCOUNTEREN</a> = 0x306
 , <br />
-&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a1860dd9579906c67a3565063043dcf78">CSR_MCOUNTEREN</a> = 0x306
-, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ac2541060307369b2031e9ec07bbd0067">CSR_MSTATUSH</a> = 0x310
+&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ac2541060307369b2031e9ec07bbd0067">CSR_MSTATUSH</a> = 0x310
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a3ce1dc0e2810f0df78feaa1c607a5ca6">CSR_MCOUNTINHIBIT</a> = 0x320
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a4a93ac5ab276cfd2f9cd296c8ce1bff6">CSR_MHPMEVENT3</a> = 0x323
+, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ab5f998725e002ffc2ff516ee973fe459">CSR_MHPMEVENT4</a> = 0x324
 , <br />
-&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ab5f998725e002ffc2ff516ee973fe459">CSR_MHPMEVENT4</a> = 0x324
-, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a2524659ca2785af51af7acf9cd560a9d">CSR_MHPMEVENT5</a> = 0x325
+&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a2524659ca2785af51af7acf9cd560a9d">CSR_MHPMEVENT5</a> = 0x325
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a1cfa1e3bc3c8a1c9a86c251a510d11cd">CSR_MHPMEVENT6</a> = 0x326
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a2e53e6e01ca8d1b801f6dfba602f3f59">CSR_MHPMEVENT7</a> = 0x327
+, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ad6296ca83bbe1280624f3c21adbd8a79">CSR_MHPMEVENT8</a> = 0x328
 , <br />
-&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ad6296ca83bbe1280624f3c21adbd8a79">CSR_MHPMEVENT8</a> = 0x328
-, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49af6727a9bdd60ccf020812095b7396632">CSR_MHPMEVENT9</a> = 0x329
+&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49af6727a9bdd60ccf020812095b7396632">CSR_MHPMEVENT9</a> = 0x329
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a23850b1804966cde2c1e84cde752d512">CSR_MHPMEVENT10</a> = 0x32a
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a7fb1de2019dd2b548084d5ca1630efbf">CSR_MHPMEVENT11</a> = 0x32b
+, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ad648b5ece209d47e9484fd7aa83e8e5f">CSR_MHPMEVENT12</a> = 0x32c
 , <br />
-&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ad648b5ece209d47e9484fd7aa83e8e5f">CSR_MHPMEVENT12</a> = 0x32c
-, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a8c31899b81bb5dba9b92a0f0ca71aea6">CSR_MHPMEVENT13</a> = 0x32d
+&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a8c31899b81bb5dba9b92a0f0ca71aea6">CSR_MHPMEVENT13</a> = 0x32d
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a964a6a50d0138447fad47e9c982a7ba4">CSR_MHPMEVENT14</a> = 0x32e
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a06dfdeed757606529e4a99c033691b54">CSR_MHPMEVENT15</a> = 0x32f
+, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a076a9412f83fab082d83f53304e598fb">CSR_MHPMEVENT16</a> = 0x330
 , <br />
-&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a076a9412f83fab082d83f53304e598fb">CSR_MHPMEVENT16</a> = 0x330
-, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ac86401295eaaf3d72805f9ede4c7b363">CSR_MHPMEVENT17</a> = 0x331
+&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ac86401295eaaf3d72805f9ede4c7b363">CSR_MHPMEVENT17</a> = 0x331
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a40812655e9aeafe1e22d14e94cdf9a7f">CSR_MHPMEVENT18</a> = 0x332
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ad32241545b091e590160cd607feccd4c">CSR_MHPMEVENT19</a> = 0x333
+, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a6da54fa60583c688291fe9a894e0d2de">CSR_MHPMEVENT20</a> = 0x334
 , <br />
-&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a6da54fa60583c688291fe9a894e0d2de">CSR_MHPMEVENT20</a> = 0x334
-, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a526b3e6aba91dbded6c298909b9db730">CSR_MHPMEVENT21</a> = 0x335
+&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a526b3e6aba91dbded6c298909b9db730">CSR_MHPMEVENT21</a> = 0x335
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a9bed325c00c2b8210860267253803e23">CSR_MHPMEVENT22</a> = 0x336
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a3d7a3542ffce08f974edf8e2762cc27d">CSR_MHPMEVENT23</a> = 0x337
+, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a69d618b0e8b15604a7376e733647ecb7">CSR_MHPMEVENT24</a> = 0x338
 , <br />
-&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a69d618b0e8b15604a7376e733647ecb7">CSR_MHPMEVENT24</a> = 0x338
-, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ace04ffb406cdb76ebef77b04d23e347e">CSR_MHPMEVENT25</a> = 0x339
+&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ace04ffb406cdb76ebef77b04d23e347e">CSR_MHPMEVENT25</a> = 0x339
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a7db301fae9620b6ba9249cb026b06442">CSR_MHPMEVENT26</a> = 0x33a
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a9e10f6c30eb8c58524cbd25f867166b5">CSR_MHPMEVENT27</a> = 0x33b
+, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49adc7e7511ee2dd7a33ed5b66bb5ab2050">CSR_MHPMEVENT28</a> = 0x33c
 , <br />
-&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49adc7e7511ee2dd7a33ed5b66bb5ab2050">CSR_MHPMEVENT28</a> = 0x33c
-, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49afb494566f93f96b69112ad739af86da0">CSR_MHPMEVENT29</a> = 0x33d
+&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49afb494566f93f96b69112ad739af86da0">CSR_MHPMEVENT29</a> = 0x33d
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ae77ea9868e45d6047b32fb29b71fffff">CSR_MHPMEVENT30</a> = 0x33e
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a39e1dbf430d3b28f77c5cfe3e52fbcd1">CSR_MHPMEVENT31</a> = 0x33f
+, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ae29976bb072639975ad0cdb985c7f004">CSR_MSCRATCH</a> = 0x340
 , <br />
-&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ae29976bb072639975ad0cdb985c7f004">CSR_MSCRATCH</a> = 0x340
-, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a5d60a25a66754066589e8facb7d41153">CSR_MEPC</a> = 0x341
+&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a5d60a25a66754066589e8facb7d41153">CSR_MEPC</a> = 0x341
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a2e14b57fee5376741634db7980a5005b">CSR_MCAUSE</a> = 0x342
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a76d30359e3b54197fb53f9939734cf1e">CSR_MTVAL</a> = 0x343
+, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49addb485275c954d1181d5bd4e4609082c">CSR_MIP</a> = 0x344
 , <br />
-&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49addb485275c954d1181d5bd4e4609082c">CSR_MIP</a> = 0x344
-, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49af1a79349e46a4829af78d2cdfd0dc44f">CSR_PMPCFG0</a> = 0x3a0
+&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49af1a79349e46a4829af78d2cdfd0dc44f">CSR_PMPCFG0</a> = 0x3a0
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a22eea318ec1ac72cc14e133b71ef4b16">CSR_PMPCFG1</a> = 0x3a1
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a0c9492f6b956f088847f72b28e7b1446">CSR_PMPCFG2</a> = 0x3a2
+, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a067ed3778590ae97dc9b16069f0ed850">CSR_PMPCFG3</a> = 0x3a3
 , <br />
-&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a067ed3778590ae97dc9b16069f0ed850">CSR_PMPCFG3</a> = 0x3a3
-, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a2e1ff8e4cd6f2310f1eefd18d1b312a9">CSR_PMPCFG4</a> = 0x3a4
+&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a2e1ff8e4cd6f2310f1eefd18d1b312a9">CSR_PMPCFG4</a> = 0x3a4
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ac08b528aeae496384248f97f99ed2575">CSR_PMPCFG5</a> = 0x3a5
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a5979e4b07bb368c9ab709b3273200361">CSR_PMPCFG6</a> = 0x3a6
+, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a36d980bcbb8549d14ac53056d852a611">CSR_PMPCFG7</a> = 0x3a7
 , <br />
-&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a36d980bcbb8549d14ac53056d852a611">CSR_PMPCFG7</a> = 0x3a7
-, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a8c16518d27d1dfd1c542decc192a83e5">CSR_PMPCFG8</a> = 0x3a8
+&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a8c16518d27d1dfd1c542decc192a83e5">CSR_PMPCFG8</a> = 0x3a8
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a7f4ac438a50a30e7ce8aad08a1845b97">CSR_PMPCFG9</a> = 0x3a9
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ad00ee8b17516cb8e5b4f2efb4c283db2">CSR_PMPCFG10</a> = 0x3aa
+, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a400eb44cab249620e9bf7bd81be936f4">CSR_PMPCFG11</a> = 0x3ab
 , <br />
-&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a400eb44cab249620e9bf7bd81be936f4">CSR_PMPCFG11</a> = 0x3ab
-, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a95ae72806783dcddf6d73b040989c3a4">CSR_PMPCFG12</a> = 0x3ac
+&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a95ae72806783dcddf6d73b040989c3a4">CSR_PMPCFG12</a> = 0x3ac
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ad6b9f888143a644b431756cf9663eb38">CSR_PMPCFG13</a> = 0x3ad
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a427ca5df8ac9539df601ae537edabcd8">CSR_PMPCFG14</a> = 0x3ae
+, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ac06ae205ba1e00d451d787d0d8d3027c">CSR_PMPCFG15</a> = 0x3af
 , <br />
-&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ac06ae205ba1e00d451d787d0d8d3027c">CSR_PMPCFG15</a> = 0x3af
-, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a8941071db6145d34fff842249c0dcb9f">CSR_PMPADDR0</a> = 0x3b0
+&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a8941071db6145d34fff842249c0dcb9f">CSR_PMPADDR0</a> = 0x3b0
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a6a2933f3a1fa243de02db8a795e3ca41">CSR_PMPADDR1</a> = 0x3b1
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49aa0b8c0561e8a778dce9c3b86499ffc50">CSR_PMPADDR2</a> = 0x3b2
+, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a89bad989197e9358563557311b3c97e9">CSR_PMPADDR3</a> = 0x3b3
 , <br />
-&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a89bad989197e9358563557311b3c97e9">CSR_PMPADDR3</a> = 0x3b3
-, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ace4529c53ad2d46767f86d920eada507">CSR_PMPADDR4</a> = 0x3b4
+&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ace4529c53ad2d46767f86d920eada507">CSR_PMPADDR4</a> = 0x3b4
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ad9e78f71409fd7783cc2ae7c28b5e42c">CSR_PMPADDR5</a> = 0x3b5
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49af57b5b7b57cd6e8b3489a27dfd702444">CSR_PMPADDR6</a> = 0x3b6
+, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ae8ea19cf3e527dbc0d36a43dfd1b7346">CSR_PMPADDR7</a> = 0x3b7
 , <br />
-&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ae8ea19cf3e527dbc0d36a43dfd1b7346">CSR_PMPADDR7</a> = 0x3b7
-, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49aec68bf7e26e44170c24599f7c6a8365b">CSR_PMPADDR8</a> = 0x3b8
+&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49aec68bf7e26e44170c24599f7c6a8365b">CSR_PMPADDR8</a> = 0x3b8
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a54d38c8cf364d886eb7ac64463eedf77">CSR_PMPADDR9</a> = 0x3b9
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ad97b6fe934a3bed6b02d0c8d81165d60">CSR_PMPADDR10</a> = 0x3ba
+, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a3e5708c0f79cf58ae761b6bb8c2a4383">CSR_PMPADDR11</a> = 0x3bb
 , <br />
-&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a3e5708c0f79cf58ae761b6bb8c2a4383">CSR_PMPADDR11</a> = 0x3bb
-, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a23026793ee53c8d55d23f63195368a6b">CSR_PMPADDR12</a> = 0x3bc
+&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a23026793ee53c8d55d23f63195368a6b">CSR_PMPADDR12</a> = 0x3bc
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a30879e88b250d3e94d9d9e728ffcc2cc">CSR_PMPADDR13</a> = 0x3bd
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a91a8b5008b4e08ab34c1516e21bf0ba8">CSR_PMPADDR14</a> = 0x3be
+, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a6879b4bf5d2db92d236b9091df4841f2">CSR_PMPADDR15</a> = 0x3bf
 , <br />
-&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a6879b4bf5d2db92d236b9091df4841f2">CSR_PMPADDR15</a> = 0x3bf
-, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a7000f9cb7f349679a29bf54ec4c03122">CSR_PMPADDR16</a> = 0x3c0
+&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a7000f9cb7f349679a29bf54ec4c03122">CSR_PMPADDR16</a> = 0x3c0
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a940428bc19dc8623a31634955f955832">CSR_PMPADDR17</a> = 0x3c1
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a2e5d2804b9eecd85a48d56a5b5260d31">CSR_PMPADDR18</a> = 0x3c2
+, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a8375bf276893169b7cd042da74e3988a">CSR_PMPADDR19</a> = 0x3c3
 , <br />
-&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a8375bf276893169b7cd042da74e3988a">CSR_PMPADDR19</a> = 0x3c3
-, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49aa254a0531492ecc29832658126de1f94">CSR_PMPADDR20</a> = 0x3c4
+&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49aa254a0531492ecc29832658126de1f94">CSR_PMPADDR20</a> = 0x3c4
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a9bf936eefbf4dcd1d2b0c1d128638f49">CSR_PMPADDR21</a> = 0x3c5
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a4d7ef55a9deb836dae2da510ba994f04">CSR_PMPADDR22</a> = 0x3c6
+, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a3871327e56884ddc76306c0c9f13073e">CSR_PMPADDR23</a> = 0x3c7
 , <br />
-&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a3871327e56884ddc76306c0c9f13073e">CSR_PMPADDR23</a> = 0x3c7
-, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a45cc9464baeb154ce8108eb71a6cac21">CSR_PMPADDR24</a> = 0x3c8
+&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a45cc9464baeb154ce8108eb71a6cac21">CSR_PMPADDR24</a> = 0x3c8
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49aa3dfccf683bc3177e0102f90ee70afb5">CSR_PMPADDR25</a> = 0x3c9
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ab0614ba409db3663674885e1eccf70bc">CSR_PMPADDR26</a> = 0x3ca
+, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ac43a0622a9fe1c67259bd0bb87aa3ffc">CSR_PMPADDR27</a> = 0x3cb
 , <br />
-&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ac43a0622a9fe1c67259bd0bb87aa3ffc">CSR_PMPADDR27</a> = 0x3cb
-, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49aee308d76710f4b8e05e537616236cbf1">CSR_PMPADDR28</a> = 0x3cc
+&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49aee308d76710f4b8e05e537616236cbf1">CSR_PMPADDR28</a> = 0x3cc
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a5729f410c96e6ffbcd4c945f37848f45">CSR_PMPADDR29</a> = 0x3cd
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a19d4a4662aecc41fc8dc3ebd43fd1f5e">CSR_PMPADDR30</a> = 0x3ce
+, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ad49af99bdc7a85294fe8e3201ae5dfc4">CSR_PMPADDR31</a> = 0x3cf
 , <br />
-&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ad49af99bdc7a85294fe8e3201ae5dfc4">CSR_PMPADDR31</a> = 0x3cf
-, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ab0ecc73564f876bcd7d7864c79334773">CSR_PMPADDR32</a> = 0x3d0
+&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ab0ecc73564f876bcd7d7864c79334773">CSR_PMPADDR32</a> = 0x3d0
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49aac9e32ac080e1b43c19a74bc8172eee6">CSR_PMPADDR33</a> = 0x3d1
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a331662b3727bc8041984f368b5766193">CSR_PMPADDR34</a> = 0x3d2
+, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49af4463fc064f321350883404278e9885f">CSR_PMPADDR35</a> = 0x3d3
 , <br />
-&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49af4463fc064f321350883404278e9885f">CSR_PMPADDR35</a> = 0x3d3
-, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ad8aa486240256014996ee40bb08fd27e">CSR_PMPADDR36</a> = 0x3d4
+&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ad8aa486240256014996ee40bb08fd27e">CSR_PMPADDR36</a> = 0x3d4
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ad2bc8dccba7af97de9c893d3f17c2835">CSR_PMPADDR37</a> = 0x3d5
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a4300474e2e300bdf3085df4cdaa39fb9">CSR_PMPADDR38</a> = 0x3d6
+, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a6b0d276105880d84ad17361b74621492">CSR_PMPADDR39</a> = 0x3d7
 , <br />
-&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a6b0d276105880d84ad17361b74621492">CSR_PMPADDR39</a> = 0x3d7
-, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a9257fdc4effa03f4286018e93aa20fe5">CSR_PMPADDR40</a> = 0x3d8
+&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a9257fdc4effa03f4286018e93aa20fe5">CSR_PMPADDR40</a> = 0x3d8
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a01ffd6d0cc8d2deb701b52d2a4a4c138">CSR_PMPADDR41</a> = 0x3d9
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a0384a0403f93bfe97935c649d3aee723">CSR_PMPADDR42</a> = 0x3da
+, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a9ff10c93633be81035205de393ae6436">CSR_PMPADDR43</a> = 0x3db
 , <br />
-&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a9ff10c93633be81035205de393ae6436">CSR_PMPADDR43</a> = 0x3db
-, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ac5f47ae8b8089e6bc7eafb4bdc9d37da">CSR_PMPADDR44</a> = 0x3dc
+&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ac5f47ae8b8089e6bc7eafb4bdc9d37da">CSR_PMPADDR44</a> = 0x3dc
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a0a4f1854d437c8aaf97df3d3e621efb7">CSR_PMPADDR45</a> = 0x3dd
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ad12dfdfb2c15c01d55ca7c599a6c481e">CSR_PMPADDR46</a> = 0x3de
+, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49af45dc8793205c09b749daa601c74575c">CSR_PMPADDR47</a> = 0x3df
 , <br />
-&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49af45dc8793205c09b749daa601c74575c">CSR_PMPADDR47</a> = 0x3df
-, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a283d603165faf9336c2b5bf114d14890">CSR_PMPADDR48</a> = 0x3e0
+&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a283d603165faf9336c2b5bf114d14890">CSR_PMPADDR48</a> = 0x3e0
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49aada916a6309e13c6477fceb106df76eb">CSR_PMPADDR49</a> = 0x3e1
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a3e6b963f145b6e0650cd728c97baea41">CSR_PMPADDR50</a> = 0x3e2
+, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ab3a2ea425b0dce6779dcfbb0b3d68229">CSR_PMPADDR51</a> = 0x3e3
 , <br />
-&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ab3a2ea425b0dce6779dcfbb0b3d68229">CSR_PMPADDR51</a> = 0x3e3
-, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a296a14a5a0e10046ca8f7c9eb58f71af">CSR_PMPADDR52</a> = 0x3e4
+&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a296a14a5a0e10046ca8f7c9eb58f71af">CSR_PMPADDR52</a> = 0x3e4
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49aae0c4845e4c448208ff582c14bee8433">CSR_PMPADDR53</a> = 0x3e5
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ac94f4b36a5f1e5b5764e934dca40b109">CSR_PMPADDR54</a> = 0x3e6
+, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a0f49a08821d7e3458ff10ff331eadad1">CSR_PMPADDR55</a> = 0x3e7
 , <br />
-&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a0f49a08821d7e3458ff10ff331eadad1">CSR_PMPADDR55</a> = 0x3e7
-, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a1ae8dbefcc7559ecc485f6545b08b784">CSR_PMPADDR56</a> = 0x3e8
+&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a1ae8dbefcc7559ecc485f6545b08b784">CSR_PMPADDR56</a> = 0x3e8
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a984a56bbcccf5e404069be16c918231a">CSR_PMPADDR57</a> = 0x3e9
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a9a362d22f611e36f5df8316a0f93c98f">CSR_PMPADDR58</a> = 0x3ea
+, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a2d9a377d9d135cb6285f304ebec2a144">CSR_PMPADDR59</a> = 0x3eb
 , <br />
-&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a2d9a377d9d135cb6285f304ebec2a144">CSR_PMPADDR59</a> = 0x3eb
-, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a20e048cf8af704ff70c8b2039374dbdb">CSR_PMPADDR60</a> = 0x3ec
+&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a20e048cf8af704ff70c8b2039374dbdb">CSR_PMPADDR60</a> = 0x3ec
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a0ac881337090c7240455aa12251b1cc7">CSR_PMPADDR61</a> = 0x3ed
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a8eba7fd134bd8616555ce34f0657755b">CSR_PMPADDR62</a> = 0x3ee
+, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a8ccc8be05d0c78010a0656f08fe9c038">CSR_PMPADDR63</a> = 0x3ef
 , <br />
-&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a8ccc8be05d0c78010a0656f08fe9c038">CSR_PMPADDR63</a> = 0x3ef
-, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a32c22641ed66c6d20902306a2b1fad77">CSR_MCYCLE</a> = 0xb00
+&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a32c22641ed66c6d20902306a2b1fad77">CSR_MCYCLE</a> = 0xb00
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a98f5e2cf2d5dbb0125a222b0065c86eb">CSR_MINSTRET</a> = 0xb02
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ae0a96f499dcde474af6ee620fbb1ebdc">CSR_MHPMCOUNTER3</a> = 0xb03
+, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a9b84bd948dd52a7779b5fd16beddaab9">CSR_MHPMCOUNTER4</a> = 0xb04
 , <br />
-&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a9b84bd948dd52a7779b5fd16beddaab9">CSR_MHPMCOUNTER4</a> = 0xb04
-, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49af15d389bb8f91c989df488d231666394">CSR_MHPMCOUNTER5</a> = 0xb05
+&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49af15d389bb8f91c989df488d231666394">CSR_MHPMCOUNTER5</a> = 0xb05
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49af65b9e99b9cadb3cb8d37f97cdbfeb9d">CSR_MHPMCOUNTER6</a> = 0xb06
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a919f39b0d299feb80403b42a466de444">CSR_MHPMCOUNTER7</a> = 0xb07
+, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a5a4cde90c547e913bddc719b3ab75e79">CSR_MHPMCOUNTER8</a> = 0xb08
 , <br />
-&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a5a4cde90c547e913bddc719b3ab75e79">CSR_MHPMCOUNTER8</a> = 0xb08
-, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a18c2a249f1f7852f42f9e10dc59d46bb">CSR_MHPMCOUNTER9</a> = 0xb09
+&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a18c2a249f1f7852f42f9e10dc59d46bb">CSR_MHPMCOUNTER9</a> = 0xb09
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a575e5342d8ec304c32dbbe99d6fd6c0f">CSR_MHPMCOUNTER10</a> = 0xb0a
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a8840b3d4f45453fc96813ccb369a68e5">CSR_MHPMCOUNTER11</a> = 0xb0b
+, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a1328a226d36d23cc81740397bde47a4e">CSR_MHPMCOUNTER12</a> = 0xb0c
 , <br />
-&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a1328a226d36d23cc81740397bde47a4e">CSR_MHPMCOUNTER12</a> = 0xb0c
-, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a9bdd102877ff50d38c86c3d741aeb4b0">CSR_MHPMCOUNTER13</a> = 0xb0d
+&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a9bdd102877ff50d38c86c3d741aeb4b0">CSR_MHPMCOUNTER13</a> = 0xb0d
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49adae22d860d8162e15120051951e45229">CSR_MHPMCOUNTER14</a> = 0xb0e
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a20400929087fabba410a098667d2d4ff">CSR_MHPMCOUNTER15</a> = 0xb0f
+, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49af03bdbb9ad8b1d1f66c6688edb58dc58">CSR_MHPMCOUNTER16</a> = 0xb10
 , <br />
-&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49af03bdbb9ad8b1d1f66c6688edb58dc58">CSR_MHPMCOUNTER16</a> = 0xb10
-, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ac940a92c502e556c0756e1461aa8fe14">CSR_MHPMCOUNTER17</a> = 0xb11
+&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ac940a92c502e556c0756e1461aa8fe14">CSR_MHPMCOUNTER17</a> = 0xb11
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49aaf82139acbd45d0b51bda730bcc0da8c">CSR_MHPMCOUNTER18</a> = 0xb12
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a77ff40944c1f3d85a1bd8b151477ccf0">CSR_MHPMCOUNTER19</a> = 0xb13
+, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a515df8be990beb2407384d77f86dbfaa">CSR_MHPMCOUNTER20</a> = 0xb14
 , <br />
-&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a515df8be990beb2407384d77f86dbfaa">CSR_MHPMCOUNTER20</a> = 0xb14
-, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a3ba77627faee546e464b19efdeea52d9">CSR_MHPMCOUNTER21</a> = 0xb15
+&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a3ba77627faee546e464b19efdeea52d9">CSR_MHPMCOUNTER21</a> = 0xb15
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a0d36dc98f4cf150ffe0b41fe152f6361">CSR_MHPMCOUNTER22</a> = 0xb16
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a02e88e4e75f123ab09bcae0f437bbc6e">CSR_MHPMCOUNTER23</a> = 0xb17
+, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a438b7c233f68d1f4e5d21e016acbeb5f">CSR_MHPMCOUNTER24</a> = 0xb18
 , <br />
-&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a438b7c233f68d1f4e5d21e016acbeb5f">CSR_MHPMCOUNTER24</a> = 0xb18
-, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ac450f3e72a17dec1540775d44457b170">CSR_MHPMCOUNTER25</a> = 0xb19
+&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ac450f3e72a17dec1540775d44457b170">CSR_MHPMCOUNTER25</a> = 0xb19
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a0cb124102f8d2a5344c9e41f44fb8bb8">CSR_MHPMCOUNTER26</a> = 0xb1a
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a10ed52d5adeaf0b442264ea79fc22e2b">CSR_MHPMCOUNTER27</a> = 0xb1b
+, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a8ff7ff3df4b3a015241949067517420f">CSR_MHPMCOUNTER28</a> = 0xb1c
 , <br />
-&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a8ff7ff3df4b3a015241949067517420f">CSR_MHPMCOUNTER28</a> = 0xb1c
-, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a5d017d66359f3eb3a38c585418774095">CSR_MHPMCOUNTER29</a> = 0xb1d
+&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a5d017d66359f3eb3a38c585418774095">CSR_MHPMCOUNTER29</a> = 0xb1d
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a7c39787ae9685f992478ae3e7667a089">CSR_MHPMCOUNTER30</a> = 0xb1e
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49acf06cf2971f9c688ebfbc97bed76b75c">CSR_MHPMCOUNTER31</a> = 0xb1f
+, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a28fcfd06ca1012c19cf053e57689687b">CSR_MCYCLEH</a> = 0xb80
 , <br />
-&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a28fcfd06ca1012c19cf053e57689687b">CSR_MCYCLEH</a> = 0xb80
-, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49afffb28b62b9baa127ae3bad919208988">CSR_MINSTRETH</a> = 0xb82
+&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49afffb28b62b9baa127ae3bad919208988">CSR_MINSTRETH</a> = 0xb82
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a252980a4da90c1f5c1ef85d164f72f25">CSR_MHPMCOUNTER3H</a> = 0xb83
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a2e9cfbf3c2828dd4bd92d2b8a1c99f85">CSR_MHPMCOUNTER4H</a> = 0xb84
+, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a7648dd0a47007d44a14e95ba47726599">CSR_MHPMCOUNTER5H</a> = 0xb85
 , <br />
-&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a7648dd0a47007d44a14e95ba47726599">CSR_MHPMCOUNTER5H</a> = 0xb85
-, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a49b7bc2df67a6c73a68757de9b218f77">CSR_MHPMCOUNTER6H</a> = 0xb86
+&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a49b7bc2df67a6c73a68757de9b218f77">CSR_MHPMCOUNTER6H</a> = 0xb86
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ac0183bb6f357ed33136493ae7ded987a">CSR_MHPMCOUNTER7H</a> = 0xb87
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a9e75518df7d14a009e3a0d5588641ddc">CSR_MHPMCOUNTER8H</a> = 0xb88
+, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a7341886c7a4aed6fc7d8677c016a2cb8">CSR_MHPMCOUNTER9H</a> = 0xb89
 , <br />
-&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a7341886c7a4aed6fc7d8677c016a2cb8">CSR_MHPMCOUNTER9H</a> = 0xb89
-, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a1e41d2b27d7e8da14871852d81123cfd">CSR_MHPMCOUNTER10H</a> = 0xb8a
+&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a1e41d2b27d7e8da14871852d81123cfd">CSR_MHPMCOUNTER10H</a> = 0xb8a
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a7fd76fcfc0d0dd47e112786bea5e4071">CSR_MHPMCOUNTER11H</a> = 0xb8b
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a332ec2b0740f8e899a1b2ec86f7ee9f2">CSR_MHPMCOUNTER12H</a> = 0xb8c
+, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a5de5c5a036dc594a554d37df9ccf657d">CSR_MHPMCOUNTER13H</a> = 0xb8d
 , <br />
-&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a5de5c5a036dc594a554d37df9ccf657d">CSR_MHPMCOUNTER13H</a> = 0xb8d
-, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ac65bab6fd71439600c8fc549171251fa">CSR_MHPMCOUNTER14H</a> = 0xb8e
+&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ac65bab6fd71439600c8fc549171251fa">CSR_MHPMCOUNTER14H</a> = 0xb8e
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49af609807e2917f73e27e5f27b38a0fa46">CSR_MHPMCOUNTER15H</a> = 0xb8f
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a7102d25d9fca4b1e1b845f2b0d6d59bc">CSR_MHPMCOUNTER16H</a> = 0xb90
+, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a8dede80ba429a9df100c9f1a8053252d">CSR_MHPMCOUNTER17H</a> = 0xb91
 , <br />
-&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a8dede80ba429a9df100c9f1a8053252d">CSR_MHPMCOUNTER17H</a> = 0xb91
-, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a115fa77e84df5b7aeee2ef8da0df7504">CSR_MHPMCOUNTER18H</a> = 0xb92
+&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a115fa77e84df5b7aeee2ef8da0df7504">CSR_MHPMCOUNTER18H</a> = 0xb92
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49abec4039ebaa1707855b2608e02bc7230">CSR_MHPMCOUNTER19H</a> = 0xb93
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a73154a36196df05f0aa671cf25d8657a">CSR_MHPMCOUNTER20H</a> = 0xb94
+, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a8d0cbc12db32df8f72d43ab1bf23d99a">CSR_MHPMCOUNTER21H</a> = 0xb95
 , <br />
-&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a8d0cbc12db32df8f72d43ab1bf23d99a">CSR_MHPMCOUNTER21H</a> = 0xb95
-, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ac4fee476c94945e2f9bb4bb220bb6c29">CSR_MHPMCOUNTER22H</a> = 0xb96
+&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ac4fee476c94945e2f9bb4bb220bb6c29">CSR_MHPMCOUNTER22H</a> = 0xb96
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a4fa7c7fdee91095bce78cea4a83a323c">CSR_MHPMCOUNTER23H</a> = 0xb97
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a89d576eaf4dcb08d29986315438227d3">CSR_MHPMCOUNTER24H</a> = 0xb98
+, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a3cdf855e91971bca38ea89a0a6f6e970">CSR_MHPMCOUNTER25H</a> = 0xb99
 , <br />
-&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a3cdf855e91971bca38ea89a0a6f6e970">CSR_MHPMCOUNTER25H</a> = 0xb99
-, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ae138eda0e2e55a987288641f648f2c43">CSR_MHPMCOUNTER26H</a> = 0xb9a
+&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ae138eda0e2e55a987288641f648f2c43">CSR_MHPMCOUNTER26H</a> = 0xb9a
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a39bde723514e9ee915def5c6b87c7d15">CSR_MHPMCOUNTER27H</a> = 0xb9b
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a7d8c02c9b321a5853bfbafa7c05fa32a">CSR_MHPMCOUNTER28H</a> = 0xb9c
+, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a8af261caff987d9cf7559188948f5058">CSR_MHPMCOUNTER29H</a> = 0xb9d
 , <br />
-&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a8af261caff987d9cf7559188948f5058">CSR_MHPMCOUNTER29H</a> = 0xb9d
-, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a37c9632e8575781372028e2526875cf6">CSR_MHPMCOUNTER30H</a> = 0xb9e
+&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a37c9632e8575781372028e2526875cf6">CSR_MHPMCOUNTER30H</a> = 0xb9e
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a646124dfdaf8cd203a02eaceb6628c91">CSR_MHPMCOUNTER31H</a> = 0xb9f
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49aaaf0f6b17a06d5922bcfdb47b382137e">CSR_CYCLE</a> = 0xc00
+, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49aab7c4abcc9a7d6c55c0f28dded7f8b59">CSR_TIME</a> = 0xc01
 , <br />
-&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49aab7c4abcc9a7d6c55c0f28dded7f8b59">CSR_TIME</a> = 0xc01
-, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a8144da8cd8691ac54aa0712685865b66">CSR_INSTRET</a> = 0xc02
+&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a8144da8cd8691ac54aa0712685865b66">CSR_INSTRET</a> = 0xc02
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a3ee699d5b2886c54c92992f66b109b67">CSR_HPMCOUNTER3</a> = 0xc03
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a98ed49716d0d89712863e7a542d38d2a">CSR_HPMCOUNTER4</a> = 0xc04
+, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ab2376c3b7c3ec0b44105ec1ed951bfb0">CSR_HPMCOUNTER5</a> = 0xc05
 , <br />
-&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ab2376c3b7c3ec0b44105ec1ed951bfb0">CSR_HPMCOUNTER5</a> = 0xc05
-, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49aa2f644a4f54ba3834bafa738208c0803">CSR_HPMCOUNTER6</a> = 0xc06
+&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49aa2f644a4f54ba3834bafa738208c0803">CSR_HPMCOUNTER6</a> = 0xc06
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a125c4d0051548dea9104808b7bee1316">CSR_HPMCOUNTER7</a> = 0xc07
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49acac87125f8c723cc5df4d4169a82852b">CSR_HPMCOUNTER8</a> = 0xc08
+, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ab45ebb3bd861074a15cc2ad874756e8f">CSR_HPMCOUNTER9</a> = 0xc09
 , <br />
-&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ab45ebb3bd861074a15cc2ad874756e8f">CSR_HPMCOUNTER9</a> = 0xc09
-, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49aa407e701bdbb9d26f84684b811c008a9">CSR_HPMCOUNTER10</a> = 0xc0a
+&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49aa407e701bdbb9d26f84684b811c008a9">CSR_HPMCOUNTER10</a> = 0xc0a
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a9fd1ff4e8a42992c0a3ec02c397dd7f8">CSR_HPMCOUNTER11</a> = 0xc0b
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ae58f15a95aa41126819effe046ced804">CSR_HPMCOUNTER12</a> = 0xc0c
+, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a24d8617a6ff2c1e49c9a73853ad9e450">CSR_HPMCOUNTER13</a> = 0xc0d
 , <br />
-&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a24d8617a6ff2c1e49c9a73853ad9e450">CSR_HPMCOUNTER13</a> = 0xc0d
-, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49aa47ed1a4a4f9fcabceed0d6d626d0aaf">CSR_HPMCOUNTER14</a> = 0xc0e
+&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49aa47ed1a4a4f9fcabceed0d6d626d0aaf">CSR_HPMCOUNTER14</a> = 0xc0e
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a7277a8f929a5a250f7227fbbdf545dbc">CSR_HPMCOUNTER15</a> = 0xc0f
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ac8ab68c5b513dc5a6b88179d3943d739">CSR_HPMCOUNTER16</a> = 0xc10
+, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a20e735db5f39dc9afb2047d54b804630">CSR_HPMCOUNTER17</a> = 0xc11
 , <br />
-&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a20e735db5f39dc9afb2047d54b804630">CSR_HPMCOUNTER17</a> = 0xc11
-, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49aebf5f25dfdd0ee7a8ad07d948b0d9032">CSR_HPMCOUNTER18</a> = 0xc12
+&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49aebf5f25dfdd0ee7a8ad07d948b0d9032">CSR_HPMCOUNTER18</a> = 0xc12
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ac85211ec2bfdc8f64a88310953882421">CSR_HPMCOUNTER19</a> = 0xc13
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49af2ef9b42e94e9a685fd4797cdec67303">CSR_HPMCOUNTER20</a> = 0xc14
+, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a883e61172854611cdf193458cb9253f8">CSR_HPMCOUNTER21</a> = 0xc15
 , <br />
-&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a883e61172854611cdf193458cb9253f8">CSR_HPMCOUNTER21</a> = 0xc15
-, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a795502605819a7ef71563634e895945a">CSR_HPMCOUNTER22</a> = 0xc16
+&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a795502605819a7ef71563634e895945a">CSR_HPMCOUNTER22</a> = 0xc16
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49afb4f5179f114388cbcedb1c415e89a73">CSR_HPMCOUNTER23</a> = 0xc17
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49aa6e5822859ccf96ddb807e36f539a3e8">CSR_HPMCOUNTER24</a> = 0xc18
+, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a28c48b13f4b3377782a9f9ef14ff95a2">CSR_HPMCOUNTER25</a> = 0xc19
 , <br />
-&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a28c48b13f4b3377782a9f9ef14ff95a2">CSR_HPMCOUNTER25</a> = 0xc19
-, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ad9ce14523b32523b123f10df47aa3731">CSR_HPMCOUNTER26</a> = 0xc1a
+&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ad9ce14523b32523b123f10df47aa3731">CSR_HPMCOUNTER26</a> = 0xc1a
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49af1354f66df0ce5d438bf1a34840bd34f">CSR_HPMCOUNTER27</a> = 0xc1b
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a07d9a3557c03f7aa42413e67841318f4">CSR_HPMCOUNTER28</a> = 0xc1c
+, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49aed8d63306de1e53300b4dba27dc249cd">CSR_HPMCOUNTER29</a> = 0xc1d
 , <br />
-&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49aed8d63306de1e53300b4dba27dc249cd">CSR_HPMCOUNTER29</a> = 0xc1d
-, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ab4df8f7724d720e511fb14df964c572b">CSR_HPMCOUNTER30</a> = 0xc1e
+&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ab4df8f7724d720e511fb14df964c572b">CSR_HPMCOUNTER30</a> = 0xc1e
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a991e763f81d60c96034c0d948cb41a9b">CSR_HPMCOUNTER31</a> = 0xc1f
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49aa276bedb7dab28935163397b4879f6db">CSR_CYCLEH</a> = 0xc80
+, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ac5e2ba343def2324fe674bff159e0b07">CSR_TIMEH</a> = 0xc81
 , <br />
-&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ac5e2ba343def2324fe674bff159e0b07">CSR_TIMEH</a> = 0xc81
-, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a9b66978d76260283007d399fc735d153">CSR_INSTRETH</a> = 0xc82
+&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a9b66978d76260283007d399fc735d153">CSR_INSTRETH</a> = 0xc82
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49aaa3e6a1ac8999be42d7c13891546bb50">CSR_HPMCOUNTER3H</a> = 0xc83
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a8837ff8d2741639aa69da59659f9a080">CSR_HPMCOUNTER4H</a> = 0xc84
+, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ad489feaa5ad1feb00d3df71d3e5b0cac">CSR_HPMCOUNTER5H</a> = 0xc85
 , <br />
-&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ad489feaa5ad1feb00d3df71d3e5b0cac">CSR_HPMCOUNTER5H</a> = 0xc85
-, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a438a65757b85f182dfb1f2a06c9ad520">CSR_HPMCOUNTER6H</a> = 0xc86
+&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a438a65757b85f182dfb1f2a06c9ad520">CSR_HPMCOUNTER6H</a> = 0xc86
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a6332d4ff090aa7c302d191219e846fff">CSR_HPMCOUNTER7H</a> = 0xc87
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49aa8ce8fc8a57dd82872d02b4113249a77">CSR_HPMCOUNTER8H</a> = 0xc88
+, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49acdf793b30919e7fa1b85995abe531a20">CSR_HPMCOUNTER9H</a> = 0xc89
 , <br />
-&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49acdf793b30919e7fa1b85995abe531a20">CSR_HPMCOUNTER9H</a> = 0xc89
-, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ae56e95d6d6dd63ff6f5b4192cf48c88b">CSR_HPMCOUNTER10H</a> = 0xc8a
+&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ae56e95d6d6dd63ff6f5b4192cf48c88b">CSR_HPMCOUNTER10H</a> = 0xc8a
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a2af8c5dcc87d92bcce392fb5b3aa065e">CSR_HPMCOUNTER11H</a> = 0xc8b
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a74359db2583feb7119d4bcaa926242a0">CSR_HPMCOUNTER12H</a> = 0xc8c
+, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a4fa22699e96d6da8665077e3c95891ef">CSR_HPMCOUNTER13H</a> = 0xc8d
 , <br />
-&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a4fa22699e96d6da8665077e3c95891ef">CSR_HPMCOUNTER13H</a> = 0xc8d
-, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a03f29e792be2854efc9e66d710b78a1d">CSR_HPMCOUNTER14H</a> = 0xc8e
+&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a03f29e792be2854efc9e66d710b78a1d">CSR_HPMCOUNTER14H</a> = 0xc8e
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a11169bd08920d40c8f94fd29e1d33eff">CSR_HPMCOUNTER15H</a> = 0xc8f
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a09e86f493461db34e690bd5632793ce3">CSR_HPMCOUNTER16H</a> = 0xc90
+, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49aacc16c87a247544ace9d035643af2f40">CSR_HPMCOUNTER17H</a> = 0xc91
 , <br />
-&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49aacc16c87a247544ace9d035643af2f40">CSR_HPMCOUNTER17H</a> = 0xc91
-, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a8102463becbfa808f65716022eb3d322">CSR_HPMCOUNTER18H</a> = 0xc92
+&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a8102463becbfa808f65716022eb3d322">CSR_HPMCOUNTER18H</a> = 0xc92
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a14fb9d3365fab9ce151546d3c437d3f7">CSR_HPMCOUNTER19H</a> = 0xc93
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a29d6041d5ab729f13912211811e784af">CSR_HPMCOUNTER20H</a> = 0xc94
+, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a79240d6d77a8c606700ade4d8e5185c3">CSR_HPMCOUNTER21H</a> = 0xc95
 , <br />
-&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a79240d6d77a8c606700ade4d8e5185c3">CSR_HPMCOUNTER21H</a> = 0xc95
-, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49afc1b90de8e9976fa66fe1d094ef2712a">CSR_HPMCOUNTER22H</a> = 0xc96
+&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49afc1b90de8e9976fa66fe1d094ef2712a">CSR_HPMCOUNTER22H</a> = 0xc96
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a8c523db85abbd00d03f5b3cc1133fc03">CSR_HPMCOUNTER23H</a> = 0xc97
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a3673ffb361496442b8107615b12d1e80">CSR_HPMCOUNTER24H</a> = 0xc98
+, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49aa920c2140fea8108b562f1f897ed7384">CSR_HPMCOUNTER25H</a> = 0xc99
 , <br />
-&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49aa920c2140fea8108b562f1f897ed7384">CSR_HPMCOUNTER25H</a> = 0xc99
-, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a69f359c71f02d93d8ff870f21e0953b3">CSR_HPMCOUNTER26H</a> = 0xc9a
+&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a69f359c71f02d93d8ff870f21e0953b3">CSR_HPMCOUNTER26H</a> = 0xc9a
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49aba063d9adcce9fa50ee4e23b289bbd9b">CSR_HPMCOUNTER27H</a> = 0xc9b
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49aad68b8523a8057b40c5aba809ca52801">CSR_HPMCOUNTER28H</a> = 0xc9c
+, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a34cd91e085517196c3a1e42d192abd46">CSR_HPMCOUNTER29H</a> = 0xc9d
 , <br />
-&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a34cd91e085517196c3a1e42d192abd46">CSR_HPMCOUNTER29H</a> = 0xc9d
-, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a8eeb0d77c82d24e86e23e55104facb53">CSR_HPMCOUNTER30H</a> = 0xc9e
+&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a8eeb0d77c82d24e86e23e55104facb53">CSR_HPMCOUNTER30H</a> = 0xc9e
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49afdc64834d24f2cea22062e0248ae254a">CSR_HPMCOUNTER31H</a> = 0xc9f
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49af5c5a21909aaca2b57f9a15f4bac246b">CSR_MVENDORID</a> = 0xf11
+, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ad95cb95266533123447ff0e917f890e4">CSR_MARCHID</a> = 0xf12
 , <br />
-&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49ad95cb95266533123447ff0e917f890e4">CSR_MARCHID</a> = 0xf12
-, <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a06d39cf0f13d6401dcf426d56149c8cd">CSR_MIMPID</a> = 0xf13
+&#160;&#160;<a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a06d39cf0f13d6401dcf426d56149c8cd">CSR_MIMPID</a> = 0xf13
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a6ba48e2306ae92f498552e1ea04d6790">CSR_MHARTID</a> = 0xf14
 , <a class="el" href="neorv32_8h.html#ac065a8cc32eed9a69ea1798492a69f49a3d9d57108b1f5e2cd84e06be9075037c">CSR_MZEXT</a> = 0xfc0
 <br />
@@ -2264,7 +2269,13 @@ Enumerations</h2></td></tr>
 </div><div class="memdoc">
 <p>Available CPU Control and Status Registers (CSRs) </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ac065a8cc32eed9a69ea1798492a69f49ad0e5de789d6390f750b8af03cdd15450"></a>CSR_MSTATUS&#160;</td><td class="fielddoc"><p>0x300 - mstatus (r/w): Machine status register </p>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ac065a8cc32eed9a69ea1798492a69f49a625f606c14fd4d7224d7109e10508e7a"></a>CSR_FFLAGS&#160;</td><td class="fielddoc"><p>0x001 - fflags (r/w): Floating-point accrued exception flags </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ac065a8cc32eed9a69ea1798492a69f49a7f198c465959dde37b7056dd06d45812"></a>CSR_FRM&#160;</td><td class="fielddoc"><p>0x002 - frm (r/w): Floating-point dynamic rounding mode </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ac065a8cc32eed9a69ea1798492a69f49a5e1abf46b4f55bd18e1d132b32696ab6"></a>CSR_FCSR&#160;</td><td class="fielddoc"><p>0x003 - fcsr (r/w): Floating-point control/staturs register (frm + fflags) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ac065a8cc32eed9a69ea1798492a69f49ad0e5de789d6390f750b8af03cdd15450"></a>CSR_MSTATUS&#160;</td><td class="fielddoc"><p>0x300 - mstatus (r/w): Machine status register </p>
 </td></tr>
 <tr><td class="fieldname"><a id="ac065a8cc32eed9a69ea1798492a69f49ade079242596ce14ce1ba9842ed29b84c"></a>CSR_MISA&#160;</td><td class="fielddoc"><p>0x301 - misa (r/-): CPU ISA and extensions (read-only in NEORV32) </p>
 </td></tr>
