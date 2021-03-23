@@ -107,6 +107,7 @@ Key Features</h3>
 <li><a href="#M---Integer-multiplication-and-division-hardware-extension"><code>M</code></a> - integer multiplication and division hardware (optional)</li>
 <li><a href="#U---Privileged-architecture---User-mode-extension"><code>U</code></a> - less-privileged <em>user mode</em> (optional)</li>
 <li><a href="#X---NEORV32-specific-CPU-extensions"><code>X</code></a> - NEORV32-specific extensions (always enabled)</li>
+<li><a href="#Zfinx---Single---precision-floating---point-extension"><code>Zfinx</code></a> - Single-precision floating-point extensions (optional) :construction:</li>
 <li><a href="#Zicsr---Privileged-architecture---CSR-access-extension"><code>Zicsr</code></a> - control and status register access instructions (+ exception/irq system) (optional)</li>
 <li><a href="#Zifencei---Privileged-architecture---Instruction-stream-synchronization-extension"><code>Zifencei</code></a> - instruction stream synchronization (optional)</li>
 <li><a href="#PMP---Privileged-architecture---Physical-memory-protection"><code>PMP</code></a> - physical memory protection (optional)</li>
@@ -271,12 +272,17 @@ General Features</h4>
 <li>All undefined/umimplemented/malformed/illegal instructions do raise an illegal instruction exception</li>
 </ul>
 <h4><a class="anchor" id="autotoc_md17"></a>
-&lt;tt&gt;Zfinx&lt;/tt&gt; - Single-precision floating-point extension (using integer &lt;tt&gt;x&lt;/tt&gt; registers)</h4>
+&lt;tt&gt;Zfinx&lt;/tt&gt; - Single-precision floating-point extension</h4>
 <ul>
 <li>:construction: <b>work-in-progress</b> :construction:</li>
 <li>:warning: this extension has not been officially ratified yet!</li>
 <li>:books: more information can be found here: <a href="https://github.com/riscv/riscv-zfinx">RISC-V <code>Zfinx</code> spec.</a></li>
 <li>:information_source: check out the <a href="https://github.com/stnolting/neorv32/projects/4">floating-point extension project board</a> for the current implementation state</li>
+<li>Fused multiply-add instructions are not supported!</li>
+<li>Computational instructions: <code>FADD.S</code> <code>FSUB.S</code> <code>FMUL.S</code> <code>FSGNJ[N/X].S</code> <code>FCLASS.S</code> ~~<code>FDIV.S</code>~~ ~~<code>FSQRT.S</code>~~</li>
+<li>Comparison instructions: <code>FMIN.S</code> <code>FMAX.S</code> <code>FEQ.S</code> <code>FLT.S</code> <code>FLE.S</code></li>
+<li>Conversion instructions: <code>FCVT.W.S</code> <code>FCVT.WU.S</code> <code>FCVT.S.W</code> <code>FCVT.S.WU</code></li>
+<li>Additional CSRs: <code>fcsr</code> <code>frm</code> <code>fflags</code></li>
 </ul>
 <h4><a class="anchor" id="autotoc_md18"></a>
 &lt;tt&gt;Zicsr&lt;/tt&gt; - Privileged architecture - CSR access extension</h4>
@@ -300,11 +306,11 @@ General Features</h4>
 <li>Environment call from M-mode (via <code>ecall</code> instruction in machine mode)</li>
 </ul>
 </li>
-<li>Supported (async.) exceptions / interrupts:<ul>
-<li>Machine timer interrupt <code>mti</code> (via processor's MTIME unit / external signal)</li>
-<li>Machine software interrupt <code>msi</code> (via external signal)</li>
-<li>Machine external interrupt <code>mei</code> (via external signal)</li>
-<li>16 fast interrupt requests (custom extension), 6+1 available for custom usage</li>
+<li>Supported interrupts:<ul>
+<li>RISC-V machine timer interrupt <code>mti</code> (via processor-internal MTIME unit <em>or</em> external signal)</li>
+<li>RISC-V machine software interrupt <code>msi</code> (via external signal)</li>
+<li>RISC-V machine external interrupt <code>mei</code> (via external signal)</li>
+<li>16 fast interrupt requests, 6+1 available for custom usage</li>
 </ul>
 </li>
 </ul>
@@ -335,7 +341,6 @@ General Features</h4>
 <li>The physical memory protection (<b>PMP</b>) only supports <code>NAPOT</code> mode yet and a minimal granularity of 8 bytes</li>
 <li>The <code>A</code> extension only implements <code>lr.w</code> and <code>sc.w</code> instructions yet. However, these instructions are sufficient to emulate all further AMO operations</li>
 <li>The <code>mcause</code> trap code <code>0x80000000</code> (originally reserved in the RISC-V specs) is used to indicate a hardware reset (as "non-maskable interrupt")</li>
-<li>The bit manipulation extension is not yet officially ratified, but is expected to stay unchanged. There is no software support in the upstream GCC RISC-V port yet. However, an intrinsic library is provided to utilize the provided bit manipulation extension from C-language code (see <a href="https://github.com/stnolting/neorv32/tree/master/sw/example/bit_manipulation"><code>sw/example/bit_manipulation</code></a>). NEORV32's <code>B</code> extension is compatible to spec. version "0.94-draft".</li>
 </ul>
 <h2><a class="anchor" id="autotoc_md23"></a>
 FPGA Implementation Results</h2>
@@ -544,14 +549,15 @@ Getting Started</h2>
 <p>Use the bootloader console to upload the <code>neorv32_exe.bin</code> executable gerated during application compiling and <em>run</em> your application.</p>
 <div class="fragment"><div class="line">&lt;&lt; NEORV32 Bootloader &gt;&gt;</div>
 <div class="line"> </div>
-<div class="line">BLDV: Nov  7 2020</div>
-<div class="line">HWV:  0x01040606</div>
-<div class="line">CLK:  0x0134FD90 Hz</div>
-<div class="line">USER: 0x0001CE40</div>
-<div class="line">MISA: 0x42801104</div>
-<div class="line">PROC: 0x03FF0035</div>
-<div class="line">IMEM: 0x00010000 bytes @ 0x00000000</div>
-<div class="line">DMEM: 0x00010000 bytes @ 0x80000000</div>
+<div class="line">BLDV: Mar 23 2021</div>
+<div class="line">HWV:  0x01050208</div>
+<div class="line">CLK:  0x05F5E100</div>
+<div class="line">USER: 0x10000DE0</div>
+<div class="line">MISA: 0x40901105</div>
+<div class="line">ZEXT: 0x00000023</div>
+<div class="line">PROC: 0x0EFF0037</div>
+<div class="line">IMEM: 0x00004000 bytes @ 0x00000000</div>
+<div class="line">DMEM: 0x00002000 bytes @ 0x80000000</div>
 <div class="line"> </div>
 <div class="line">Autoboot in 8s. Press key to abort.</div>
 <div class="line">Aborted.</div>
