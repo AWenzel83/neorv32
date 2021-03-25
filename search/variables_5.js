@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['trap_5ftimestamp32_1370',['trap_timestamp32',['../cpu__test_2main_8c.html#aabc965af6ab37d074ad951c48808c739',1,'main.c']]]
+  ['getting_5fexe_1483',['getting_exe',['../bootloader_8c.html#a5fa6b109bf211d1768f84c9d38eef240',1,'bootloader.c']]]
 ];

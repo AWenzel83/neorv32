@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['cnt_5ffail_1364',['cnt_fail',['../cpu__test_2main_8c.html#abcd49ba0b542173c3c9873224ed808ae',1,'main.c']]],
-  ['cnt_5fok_1365',['cnt_ok',['../cpu__test_2main_8c.html#aff1d8a4c7e391b1262673c432a197d39',1,'main.c']]],
-  ['cnt_5ftest_1366',['cnt_test',['../cpu__test_2main_8c.html#af38deccd07b94f113e184e0e477cdb2a',1,'main.c']]]
+  ['binary_5fvalue_1477',['binary_value',['../unionfloat__emu__t.html#ac3dbf1c72f29cbc3a3a365d25a4fb70d',1,'float_emu_t']]]
 ];
