@@ -67,7 +67,6 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Data Structures</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">main.c File Reference</div>  </div>
@@ -81,17 +80,12 @@ $(function() {
 <code>#include &lt;math.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="neorv32__zfinx__extension__intrinsics_8h_source.html">neorv32_zfinx_extension_intrinsics.h</a>&quot;</code><br />
 </div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">union &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unionfloat__emu__t.html">float_emu_t</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
 <tr><td colspan="2"><div class="groupHeader">User configuration</div></td></tr>
 <tr class="memitem:ad4455691936f92fdd6c37566fc58ba1f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="floating__point__test_2main_8c.html#ad4455691936f92fdd6c37566fc58ba1f">BAUD_RATE</a>&#160;&#160;&#160;(19200)</td></tr>
 <tr class="separator:ad4455691936f92fdd6c37566fc58ba1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a83792c34853f1d2801b59ad46adc7e1e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="floating__point__test_2main_8c.html#a83792c34853f1d2801b59ad46adc7e1e">NUM_TEST_CASES</a>&#160;&#160;&#160;(50000000)</td></tr>
+<tr class="memitem:a83792c34853f1d2801b59ad46adc7e1e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="floating__point__test_2main_8c.html#a83792c34853f1d2801b59ad46adc7e1e">NUM_TEST_CASES</a>&#160;&#160;&#160;(1000000)</td></tr>
 <tr class="separator:a83792c34853f1d2801b59ad46adc7e1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a87f296d7594bb8178cf76f0c045b7013"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="floating__point__test_2main_8c.html#a87f296d7594bb8178cf76f0c045b7013">SILENT_MODE</a>&#160;&#160;&#160;(1)</td></tr>
 <tr class="separator:a87f296d7594bb8178cf76f0c045b7013"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -111,6 +105,8 @@ Macros</h2></td></tr>
 <tr class="separator:a7e134923925fa24fd1090281c3a416c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a923de9c3e55322d85522740c0d0ff867"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="floating__point__test_2main_8c.html#a923de9c3e55322d85522740c0d0ff867">RUN_UNAVAIL_TESTS</a>&#160;&#160;&#160;(1)</td></tr>
 <tr class="separator:a923de9c3e55322d85522740c0d0ff867"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6969308bd3633928893a2666f1df66fc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="floating__point__test_2main_8c.html#a6969308bd3633928893a2666f1df66fc">RUN_TIMING_TESTS</a>&#160;&#160;&#160;(1)</td></tr>
+<tr class="separator:a6969308bd3633928893a2666f1df66fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -151,7 +147,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define NUM_TEST_CASES&#160;&#160;&#160;(50000000)</td>
+          <td class="memname">#define NUM_TEST_CASES&#160;&#160;&#160;(1000000)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -257,6 +253,21 @@ Functions</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">#define RUN_SGNINJ_TESTS&#160;&#160;&#160;(1)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>UART BAUD rate </p>
+
+</div>
+</div>
+<a id="a6969308bd3633928893a2666f1df66fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6969308bd3633928893a2666f1df66fc">&#9670;&nbsp;</a></span>RUN_TIMING_TESTS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RUN_TIMING_TESTS&#160;&#160;&#160;(1)</td>
         </tr>
       </table>
 </div><div class="memdoc">
