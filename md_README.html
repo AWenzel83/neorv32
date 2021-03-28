@@ -87,6 +87,7 @@ Overview</h2>
 <p>The NEORV32 Processor is a customizable microcontroller-like system on chip (SoC) that is based on the RISC-V NEORV32 CPU. The processor is intended as auxiliary processor within a larger SoC designs or as <em>ready-to-go</em> stand-alone custom microcontroller.</p>
 <p>:books: For detailed information take a look at the <a href="https://raw.githubusercontent.com/stnolting/neorv32/master/docs/NEORV32.pdf">NEORV32 data sheet (pdf)</a>. The doxygen-based documentation of the <em>software framework</em> is available online at <a href="https://stnolting.github.io/neorv32/files.html">GitHub-pages</a>.</p>
 <p>:label: The project’s change log is available as <a href="https://github.com/stnolting/neorv32/blob/master/CHANGELOG.md">CHANGELOG.md</a> in the root directory of this repository. To see the changes between <em>stable</em> releases visit the project's <a href="https://github.com/stnolting/neorv32/releases">release page</a>.</p>
+<p>:rocket: The <a href="https://github.com/stnolting/neorv32/tree/master/boards"><code>boards</code></a> folder provides exemplary setups targeting various FPGA boards to get you started.</p>
 <p>:spiral_notepad: Check out the <a href="https://github.com/stnolting/neorv32/projects">project boards</a> for a list of current <b>ideas</b>, <b>TODOs</b>, features being <b>planned</b> and <b>work-in-progress</b>.</p>
 <p>:bulb: Feel free to open a <a href="https://github.com/stnolting/neorv32/issues">new issue</a> or start a <a href="https://github.com/stnolting/neorv32/discussions">new discussion</a> if you have questions, comments, ideas or bug-fixes. Check out how to <a href="#ContributeFeedbackQuestions">contribute</a>.</p>
 <h3><a class="anchor" id="autotoc_md2"></a>
@@ -413,7 +414,8 @@ NEORV32 Processor-Internal Peripherals and Memories</h3>
 </table>
 <h3><a class="anchor" id="autotoc_md26"></a>
 NEORV32 Processor - Exemplary FPGA Setups</h3>
-<p>Exemplary processor implementation results for different FPGA platforms. The processor setup uses <em>the default peripheral configuration</em> (like no <em>CFS</em> and no <em>TRNG</em>), no external memory interface and only internal instruction and data memories. IMEM uses 16kB and DMEM uses 8kB memory space. The setup's top entity connects most of the processor's <a href="https://github.com/stnolting/neorv32/blob/master/rtl/core/neorv32_top.vhd">top entity</a> signals to FPGA pins - except for the Wishbone bus and the interrupt signals. The "default" strategy of each toolchain is used.</p>
+<p>:information_source: Check out the <a href="https://github.com/stnolting/neorv32/tree/master/boards"><code>boards</code></a> folder for exemplary setups targeting various FPGA boards.</p>
+<p>The following tables show exemplary processor implementation results for different FPGA platforms. The processor setups use <em>the default peripheral configuration</em> (like no <em>CFS</em> and no <em>TRNG</em>), no external memory interface and only internal instruction and data memories. IMEM uses 16kB and DMEM uses 8kB memory space.</p>
 <p>Results generated for hardware version <a href="https://github.com/stnolting/neorv32/blob/master/CHANGELOG.md"><code>1.4.9.0</code></a>.</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -426,6 +428,7 @@ NEORV32 Processor - Exemplary FPGA Setups</h3>
 <td class="markdownTableBodyLeft">Xilinx   </td><td class="markdownTableBodyLeft">Artix-7 <code>XC7A35TICSG324-1L</code>   </td><td class="markdownTableBodyLeft">Arty A7-35T   </td><td class="markdownTableBodyLeft">Vivado 2019.2   </td><td class="markdownTableBodyLeft"><code>rv32imc</code> + <code>u</code> + <code>Zicsr</code> + <code>Zifencei</code> + <code>PMP</code>   </td><td class="markdownTableBodyLeft">2465 (12%)   </td><td class="markdownTableBodyLeft">1912 (5%)   </td><td class="markdownTableBodyLeft">0 (0%)   </td><td class="markdownTableBodyLeft">-   </td><td class="markdownTableBodyLeft">8 (16%)   </td><td class="markdownTableBodyLeft">-   </td><td class="markdownTableBodyRight"><em>c</em> 100 MHz   </td></tr>
 </table>
 <p>**_Notes_**</p><ul>
+<li>The "default" implementation strategy of the according toolchain is used.</li>
 <li>The Lattice iCE40 UltraPlus setup uses the FPGA's SPRAM memory primitives for the internal IMEM and DMEM (each 64kb). The FPGA-specific memory components can be found in <a href="https://github.com/stnolting/neorv32/blob/master/rtl/fpga_specific/lattice_ice40up"><code>rtl/fpga_specific</code></a>.</li>
 <li>The clock frequencies marked with a "c" are constrained clocks. The remaining ones are <em>f_max</em> results from the place and route timing reports.</li>
 <li>The Upduino and the Arty board have on-board SPI flash memories for storing the FPGA configuration. These device can also be used by the default NEORV32 bootloader to store and automatically boot an application program after reset (both tested successfully).</li>
@@ -513,6 +516,7 @@ Getting Started</h2>
 </pre><p> Alternatively, you can either download a specific <a href="https://github.com/stnolting/neorv32/releases">release</a> or get the most recent version of this project as <a href="https://github.com/stnolting/neorv32/archive/master.zip"><code>*.zip</code> file</a>.</p>
 <h3><a class="anchor" id="autotoc_md35"></a>
 3. Create a new FPGA Project</h3>
+<p>:information_source: If want to use a script-based exemplary project setup check out the <a href="https://github.com/stnolting/neorv32/tree/master/boards"><code>boards</code></a> folder, which provides exemplary setups targeting various FPGA boards.</p>
 <p>Create a new project with your FPGA design tool of choice. Add all the <code>*.vhd</code> files from the <a href="https://github.com/stnolting/neorv32/blob/master/rtl"><code>rtl/core</code></a> folder to this project. Make sure to add these files to a <b>new design library</b> called <code>neorv32</code>.</p>
 <p>You can either instantiate the <a href="https://github.com/stnolting/neorv32/blob/master/rtl/core/neorv32_top.vhd">processor's top entity</a> or one of its <a href="https://github.com/stnolting/neorv32/blob/master/rtl/top_templates">wrappers</a> in your own project. If you just want to try thing out, you can use the simple <a href="https://github.com/stnolting/neorv32/blob/master/rtl/top_templates/neorv32_test_setup.vhd"><b>test setup</b> (<code>rtl/top_templates/neorv32_test_setup.vhd</code>)</a> as top entity.</p>
 <p><img src="https://raw.githubusercontent.com/stnolting/neorv32/master/docs/figures/neorv32_test_setup.png" alt="neorv32 test setup" class="inline"/></p>
